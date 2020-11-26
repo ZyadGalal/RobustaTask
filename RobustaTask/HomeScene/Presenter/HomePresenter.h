@@ -9,6 +9,7 @@
 #import "HomeView.h"
 #import "HomeInteractor.h"
 #import "HomeRouter.h"
+#import "RepoModel.h"
 
 @protocol HomePresenter< NSObject >
 
@@ -17,7 +18,8 @@
 @property (nonatomic , strong) id <HomeRouter> router;
 
 -(void) initWithView: (id < HomeView >) view interactor: (id < HomeInteractor >) interactor router: (id < HomeRouter >) router ;
-
-
+-(void) viewDidLoad;
+-(NSUInteger) repositoriesCount;
+-(RepoModel *) getItemAtIndex: (int) index;
 @end
 

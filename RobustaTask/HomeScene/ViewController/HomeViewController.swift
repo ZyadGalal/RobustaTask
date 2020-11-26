@@ -6,13 +6,18 @@
 //
 
 import UIKit
+import Kingfisher
+import SVProgressHUD
 
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeTableView: UITableView!
+    @objc var presenter: HomePresenterImpl?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Repositories"
         registerCell()
+        presenter?.viewDidLoad()
     }
     func registerCell(){
         homeTableView.register(HomeTableViewCell.self)
@@ -20,17 +25,41 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeView {
+    func showIndicator() {
+        SVProgressHUD.show(withStatus: "Loading")
+    }
+    
+    func hideIndicator() {
+        DispatchQueue.main.async {
+            SVProgressHUD.dismiss()
+        }
+    }
+    
+    func didFetchDataSuccessfully() {
+        DispatchQueue.main.async {
+            self.homeTableView.reloadData()
+        }
+    }
+    
+    func didFailFetchingDataWithError(_ error: String!) {
+        self.showAlert(title: "Error", message: error) { _ in}
+    }
+    
     
 }
 
 extension HomeViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        guard let itemsCount = presenter?.repositoriesCount() else {return 0}
+        return Int(itemsCount)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let model = presenter?.getItemAt(Int32(indexPath.row)) else{return UITableViewCell()}
         let cell = tableView.dequeueCell() as HomeTableViewCell
-        cell.repoNameLabel.text = "Zyad Repo"
-        cell.ownerNameLabel.text = "Zyad Galal"
+        cell.repoNameLabel.text = model.repoName
+        cell.ownerNameLabel.text = model.ownerName
+        cell.avatarImageView.kf.indicatorType = .activity
+        cell.avatarImageView.kf.setImage(with: model.ownerAvatarURL)
         return cell
     }
 }

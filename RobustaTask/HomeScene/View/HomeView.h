@@ -7,8 +7,9 @@
 
 #import <Foundation/Foundation.h>
 
-
 @protocol HomeView <NSObject>
-
+-(void) didFetchDataSuccessfully;
+-(void) didFailFetchingDataWithError: (NSString *) error;
+-(void) showIndicator;
+-(void) hideIndicator;
 @end
-

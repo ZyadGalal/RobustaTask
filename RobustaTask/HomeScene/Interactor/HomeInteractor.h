@@ -5,6 +5,10 @@
 //  Created by Zyad Galal on 26/11/2020.
 //
 
-@protocol HomeInteractor <NSObject>
+#import <Foundation/Foundation.h>
 
+@protocol HomeInteractor <NSObject>
+typedef void (^completionHandler)(NSMutableArray* _Nullable response , NSError* _Nullable error);
+
+-(void) fetchRepoWithCompletion:(completionHandler) completion;
 @end

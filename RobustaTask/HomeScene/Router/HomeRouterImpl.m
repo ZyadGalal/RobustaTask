@@ -18,6 +18,7 @@
     HomeRouterImpl *router = [[HomeRouterImpl alloc] init];
     HomePresenterImpl *presenter = [[HomePresenterImpl alloc] init];
     [presenter initWithView:homeView interactor:interactor router:router];
+    homeView.presenter = presenter;
     return homeView;;
     
 }

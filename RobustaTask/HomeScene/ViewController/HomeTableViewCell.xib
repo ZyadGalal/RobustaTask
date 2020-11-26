@@ -25,6 +25,11 @@
                                     <constraint firstAttribute="height" constant="70" id="2G4-a0-7PZ"/>
                                     <constraint firstAttribute="width" secondItem="e76-84-O58" secondAttribute="height" multiplier="1:1" id="Vwt-3I-TcA"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XRh-vl-WKM">
                                 <rect key="frame" x="70" y="0.0" width="240" height="60"/>
