@@ -12,12 +12,25 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var homeTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        registerCell()
     }
-
+    func registerCell(){
+        homeTableView.register(HomeTableViewCell.self)
+    }
 }
 
 extension HomeViewController: HomeView {
     
+}
+
+extension HomeViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueCell() as HomeTableViewCell
+        cell.repoNameLabel.text = "Zyad Repo"
+        cell.ownerNameLabel.text = "Zyad Galal"
+        return cell
+    }
 }
