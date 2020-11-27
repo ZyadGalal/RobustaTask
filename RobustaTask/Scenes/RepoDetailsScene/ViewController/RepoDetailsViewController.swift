@@ -74,6 +74,27 @@ class RepoDetailsViewController: UIViewController {
 }
 
 extension RepoDetailsViewController: RepoDetailsView {
+    func updateUI(withOwnerName name: String!, repoName: String!, avatarURL url: URL!, repoDescription description: String!, languages: [AnyHashable : Any]!, totalLines: Int32) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            self.ownerImageView.kf.indicatorType = .activity
+            self.ownerImageView.kf.setImage(with: url)
+            self.ownerNameLabel.text = name
+            self.repoNameLabel.text = repoName
+            self.updateChartsData(from: languages as! [String: Int], totalLines: Int(totalLines))
+            if let description = description {
+                self.repoDescriptionLabel.text = description
+            }
+            else{
+                self.repoDescriptionLabel.isHidden = true
+            }
+            UIView.animate(withDuration: 0.3) {
+                self.containerView.alpha = 1
+            }
+        }
+
+    }
+    
 
     func showIndicator() {
         DispatchQueue.main.async {
@@ -88,23 +109,6 @@ extension RepoDetailsViewController: RepoDetailsView {
     }
     
     func updateUI(with model: RepoModel!, languages: [AnyHashable : Any]!, totalLines: Int32) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else {return}
-            self.ownerImageView.kf.indicatorType = .activity
-            self.ownerImageView.kf.setImage(with: model.ownerAvatarURL)
-            self.ownerNameLabel.text = model.ownerName
-            self.repoNameLabel.text = model.repoName
-            self.updateChartsData(from: languages as! [String: Int], totalLines: Int(totalLines))
-            if let description = model.repoDescription {
-                self.repoDescriptionLabel.text = description
-            }
-            else{
-                self.repoDescriptionLabel.isHidden = true
-            }
-            UIView.animate(withDuration: 0.3) {
-                self.containerView.alpha = 1
-            }
-        }
     }
     
     func didFailFetchingDataWithError(_ error: String!) {

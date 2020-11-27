@@ -9,7 +9,7 @@
 
 -(void) showIndicator;
 -(void) hideIndicator;
--(void) updateUIWithModel: (RepoModel *) model languages: (NSDictionary *) languages totalLines:(int) totalLines ;
+-(void) updateUIWithOwnerName: (NSString *) name repoName:(NSString *) repoName avatarURL: (NSURL *) url repoDescription: (NSString *) description languages: (NSDictionary *) languages totalLines:(int) totalLines ;
 -(void) didFailFetchingDataWithError: (NSString *) error;
 
 @end

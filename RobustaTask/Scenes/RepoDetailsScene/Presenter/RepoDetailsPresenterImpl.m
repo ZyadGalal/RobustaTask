@@ -53,7 +53,9 @@
             id value = response[key];
             totalLinesOfCode = totalLinesOfCode + [value intValue];
         }
-        [self.view updateUIWithModel:self.model languages:response totalLines:totalLinesOfCode];
+        
+        [self.view updateUIWithOwnerName:self.model.ownerName repoName:self.model.repoName avatarURL:self.model.ownerAvatarURL repoDescription:self.model.repoDescription languages:response totalLines:totalLinesOfCode];
+        
     }];
 }
 
