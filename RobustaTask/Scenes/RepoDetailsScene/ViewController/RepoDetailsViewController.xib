@@ -86,7 +86,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <action selector="GithubButtonClicked:" destination="-1" eventType="touchUpInside" id="6Gk-JO-7Ws"/>
+                                                        <action selector="githubButtonClicked:" destination="-1" eventType="touchUpInside" id="zMo-Qr-8Wn"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naW-dJ-Xe1">
@@ -101,6 +101,9 @@
                                                             <real key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="contributorsButtonClicked:" destination="-1" eventType="touchUpInside" id="Xbh-w7-AHt"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

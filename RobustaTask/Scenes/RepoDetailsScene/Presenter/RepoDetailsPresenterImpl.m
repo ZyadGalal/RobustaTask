@@ -36,6 +36,11 @@
     }
 }
 
+- (void)didClickOnContributorsButton {
+    [self.router navigateToContributorsFromView:view contributorsURL:model.contributorsURL];
+}
+
+
 -(void) getLanguages {
     [self.view showIndicator];
     [interactor getUsedLanguagesFromURL:model.languagesLink Completion:^(NSDictionary * _Nullable response, NSError * _Nullable error) {

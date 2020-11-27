@@ -18,4 +18,5 @@
 -(void) initWithView: (id <RepoDetailsView> ) view interactor:(id <RepoDetailsInteractor>) interactor router:(id<RepoDetailsRouter>) router model:(RepoModel *)model;
 -(void) viewDidLoad;
 -(void) didClickOnGithubButton;
+-(void) didClickOnContributorsButton;
 @end

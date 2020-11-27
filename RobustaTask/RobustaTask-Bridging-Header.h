@@ -9,3 +9,5 @@
 #import "HomePresenterImpl.h"
 #import "RepoDetailsView.h"
 #import "RepoDetailsPresenterImpl.h"
+#import "ContributorsView.h"
+#import "ContributorsPresenterImpl.h"

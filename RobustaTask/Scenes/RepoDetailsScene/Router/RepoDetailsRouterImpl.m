@@ -7,7 +7,7 @@
 
 #import "RepoDetailsRouterImpl.h"
 #import "RobustaTask-Swift.h"
-
+#import "ContributorsRouterImpl.h"
 @implementation RepoDetailsRouterImpl
 
 + (UIViewController *)createDetailsViewWithModel:(RepoModel *)model {
@@ -21,5 +21,13 @@
     detailsView.presenter = presenter;
     return detailsView;
 }
+
+- (void)navigateToContributorsFromView:(id)view contributorsURL:(NSURL *)url { 
+    UIViewController *contributorsView = [ContributorsRouterImpl createDetailsViewWithContributorsURL:url];
+    if ([view isKindOfClass:[UIViewController class]]) {
+        [[(UIViewController *) view navigationController] pushViewController:contributorsView animated:YES];
+    }
+}
+
 
 @end

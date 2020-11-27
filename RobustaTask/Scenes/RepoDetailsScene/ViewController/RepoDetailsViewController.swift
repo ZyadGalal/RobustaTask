@@ -22,14 +22,20 @@ class RepoDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Details"
         initPieChart()
         containerView.alpha = 0
         presenter?.viewDidLoad()
     }
 
-    @IBAction func GithubButtonClicked(_ sender: Any) {
+    @IBAction func githubButtonClicked(_ sender: Any) {
         presenter?.didClickOnGithubButton()
     }
+    
+    @IBAction func contributorsButtonClicked(_ sender: Any) {
+        presenter?.didClickOnContributorsButton()
+    }
+    
     func initPieChart()
     {
         let chartCenterText = NSMutableAttributedString(string: "Languages")

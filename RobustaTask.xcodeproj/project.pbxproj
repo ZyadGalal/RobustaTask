@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		323E09E72571B0D60039A07C /* ContributorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323E09E52571B0D60039A07C /* ContributorsTableViewCell.swift */; };
+		323E09E82571B0D60039A07C /* ContributorsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 323E09E62571B0D60039A07C /* ContributorsTableViewCell.xib */; };
 		3276F39725718092005D2C07 /* ChartColorTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276F39625718092005D2C07 /* ChartColorTemplates.swift */; };
 		327E2FD42570174E00CA41D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 327E2FD32570174E00CA41D2 /* AppDelegate.m */; };
 		327E2FDF2570174F00CA41D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327E2FDE2570174F00CA41D2 /* Assets.xcassets */; };
@@ -29,11 +31,19 @@
 		327E306D2571582A00CA41D2 /* RepoDetailsPresenterImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 327E306C2571582A00CA41D2 /* RepoDetailsPresenterImpl.m */; };
 		327E3076257159C800CA41D2 /* RepoDetailsRouterImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 327E3075257159C800CA41D2 /* RepoDetailsRouterImpl.m */; };
 		327E307C25715A9C00CA41D2 /* RepoDetailsInteractorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 327E307B25715A9C00CA41D2 /* RepoDetailsInteractorImpl.m */; };
+		32BA43672571A134006FAF07 /* ContributorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BA43652571A134006FAF07 /* ContributorsViewController.swift */; };
+		32BA43682571A134006FAF07 /* ContributorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32BA43662571A134006FAF07 /* ContributorsViewController.xib */; };
+		32BA436E2571A186006FAF07 /* ContributorsPresenterImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BA436D2571A186006FAF07 /* ContributorsPresenterImpl.m */; };
+		32BA43752571A238006FAF07 /* ContributorsInteractorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BA43742571A238006FAF07 /* ContributorsInteractorImpl.m */; };
+		32BA437B2571A2E3006FAF07 /* ContributorsRouterImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BA437A2571A2E3006FAF07 /* ContributorsRouterImpl.m */; };
+		32BA43892571A974006FAF07 /* ContributorsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BA43882571A974006FAF07 /* ContributorsModel.m */; };
 		8EA8D0EF81A2872C20A75476 /* Pods_RobustaTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C2B624C22F2C44CB0E1ABA /* Pods_RobustaTask.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		27175006A99153B5FB24F334 /* Pods-RobustaTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RobustaTask.release.xcconfig"; path = "Target Support Files/Pods-RobustaTask/Pods-RobustaTask.release.xcconfig"; sourceTree = "<group>"; };
+		323E09E52571B0D60039A07C /* ContributorsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributorsTableViewCell.swift; sourceTree = "<group>"; };
+		323E09E62571B0D60039A07C /* ContributorsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContributorsTableViewCell.xib; sourceTree = "<group>"; };
 		3276F39625718092005D2C07 /* ChartColorTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColorTemplates.swift; sourceTree = "<group>"; };
 		327E2FCF2570174E00CA41D2 /* RobustaTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobustaTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		327E2FD22570174E00CA41D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,6 +86,20 @@
 		327E307825715A3400CA41D2 /* RepoDetailsInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepoDetailsInteractor.h; sourceTree = "<group>"; };
 		327E307925715A5500CA41D2 /* RepoDetailsInteractorImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepoDetailsInteractorImpl.h; sourceTree = "<group>"; };
 		327E307B25715A9C00CA41D2 /* RepoDetailsInteractorImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepoDetailsInteractorImpl.m; sourceTree = "<group>"; };
+		32BA43652571A134006FAF07 /* ContributorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributorsViewController.swift; sourceTree = "<group>"; };
+		32BA43662571A134006FAF07 /* ContributorsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContributorsViewController.xib; sourceTree = "<group>"; };
+		32BA436B2571A15A006FAF07 /* ContributorsPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContributorsPresenter.h; sourceTree = "<group>"; };
+		32BA436C2571A17B006FAF07 /* ContributorsPresenterImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContributorsPresenterImpl.h; sourceTree = "<group>"; };
+		32BA436D2571A186006FAF07 /* ContributorsPresenterImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContributorsPresenterImpl.m; sourceTree = "<group>"; };
+		32BA43722571A1E2006FAF07 /* ContributorsInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContributorsInteractor.h; sourceTree = "<group>"; };
+		32BA43732571A20F006FAF07 /* ContributorsInteractorImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContributorsInteractorImpl.h; sourceTree = "<group>"; };
+		32BA43742571A238006FAF07 /* ContributorsInteractorImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContributorsInteractorImpl.m; sourceTree = "<group>"; };
+		32BA43782571A2A2006FAF07 /* ContributorsRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContributorsRouter.h; sourceTree = "<group>"; };
+		32BA43792571A2B5006FAF07 /* ContributorsRouterImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContributorsRouterImpl.h; sourceTree = "<group>"; };
+		32BA437A2571A2E3006FAF07 /* ContributorsRouterImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContributorsRouterImpl.m; sourceTree = "<group>"; };
+		32BA43842571A5F9006FAF07 /* ContributorsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContributorsView.h; sourceTree = "<group>"; };
+		32BA43872571A942006FAF07 /* ContributorsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContributorsModel.h; sourceTree = "<group>"; };
+		32BA43882571A974006FAF07 /* ContributorsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContributorsModel.m; sourceTree = "<group>"; };
 		85172ED588BF9050E6D00F79 /* Pods-RobustaTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RobustaTask.debug.xcconfig"; path = "Target Support Files/Pods-RobustaTask/Pods-RobustaTask.debug.xcconfig"; sourceTree = "<group>"; };
 		E3C2B624C22F2C44CB0E1ABA /* Pods_RobustaTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RobustaTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -121,11 +145,10 @@
 		327E2FD12570174E00CA41D2 /* RobustaTask */ = {
 			isa = PBXGroup;
 			children = (
+				32BA43622571A07E006FAF07 /* Scenes */,
 				3276F3952571807B005D2C07 /* Utils */,
-				327E305C2571570C00CA41D2 /* RepoDetailsScene */,
 				327E303D2570512E00CA41D2 /* Network */,
 				327E3031257035A500CA41D2 /* Helpers */,
-				327E2FF02570178D00CA41D2 /* HomeScene */,
 				327E2FD22570174E00CA41D2 /* AppDelegate.h */,
 				327E2FD32570174E00CA41D2 /* AppDelegate.m */,
 				327E2FDE2570174F00CA41D2 /* Assets.xcassets */,
@@ -230,7 +253,6 @@
 		327E305C2571570C00CA41D2 /* RepoDetailsScene */ = {
 			isa = PBXGroup;
 			children = (
-				327E30682571575C00CA41D2 /* Model */,
 				327E30672571575500CA41D2 /* Interactor */,
 				327E30662571574F00CA41D2 /* Router */,
 				327E30652571574B00CA41D2 /* View */,
@@ -287,9 +309,83 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		327E30682571575C00CA41D2 /* Model */ = {
+		32BA43622571A07E006FAF07 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				32BA43632571A08E006FAF07 /* ContributorsScene */,
+				327E2FF02570178D00CA41D2 /* HomeScene */,
+				327E305C2571570C00CA41D2 /* RepoDetailsScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		32BA43632571A08E006FAF07 /* ContributorsScene */ = {
+			isa = PBXGroup;
+			children = (
+				32BA43862571A925006FAF07 /* Model */,
+				32BA43832571A5E5006FAF07 /* View */,
+				32BA43772571A287006FAF07 /* Router */,
+				32BA43712571A1C3006FAF07 /* Interactor */,
+				32BA436A2571A144006FAF07 /* Presenter */,
+				32BA43642571A122006FAF07 /* ViewController */,
+			);
+			path = ContributorsScene;
+			sourceTree = "<group>";
+		};
+		32BA43642571A122006FAF07 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				32BA43652571A134006FAF07 /* ContributorsViewController.swift */,
+				32BA43662571A134006FAF07 /* ContributorsViewController.xib */,
+				323E09E52571B0D60039A07C /* ContributorsTableViewCell.swift */,
+				323E09E62571B0D60039A07C /* ContributorsTableViewCell.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		32BA436A2571A144006FAF07 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				32BA436B2571A15A006FAF07 /* ContributorsPresenter.h */,
+				32BA436C2571A17B006FAF07 /* ContributorsPresenterImpl.h */,
+				32BA436D2571A186006FAF07 /* ContributorsPresenterImpl.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		32BA43712571A1C3006FAF07 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				32BA43722571A1E2006FAF07 /* ContributorsInteractor.h */,
+				32BA43732571A20F006FAF07 /* ContributorsInteractorImpl.h */,
+				32BA43742571A238006FAF07 /* ContributorsInteractorImpl.m */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		32BA43772571A287006FAF07 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				32BA43782571A2A2006FAF07 /* ContributorsRouter.h */,
+				32BA43792571A2B5006FAF07 /* ContributorsRouterImpl.h */,
+				32BA437A2571A2E3006FAF07 /* ContributorsRouterImpl.m */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		32BA43832571A5E5006FAF07 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				32BA43842571A5F9006FAF07 /* ContributorsView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		32BA43862571A925006FAF07 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				32BA43872571A942006FAF07 /* ContributorsModel.h */,
+				32BA43882571A974006FAF07 /* ContributorsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -372,7 +468,9 @@
 			files = (
 				327E2FE22570174F00CA41D2 /* LaunchScreen.storyboard in Resources */,
 				327E2FDF2570174F00CA41D2 /* Assets.xcassets in Resources */,
+				32BA43682571A134006FAF07 /* ContributorsViewController.xib in Resources */,
 				327E30612571573E00CA41D2 /* RepoDetailsViewController.xib in Resources */,
+				323E09E82571B0D60039A07C /* ContributorsTableViewCell.xib in Resources */,
 				327E303B257036F100CA41D2 /* HomeTableViewCell.xib in Resources */,
 				327E302625702D3300CA41D2 /* HomeViewController.xib in Resources */,
 			);
@@ -430,7 +528,10 @@
 				327E2FD42570174E00CA41D2 /* AppDelegate.m in Sources */,
 				327E301D2570243B00CA41D2 /* HomeInteractorImpl.m in Sources */,
 				327E300F25701A9700CA41D2 /* HomePresenterImpl.m in Sources */,
+				32BA437B2571A2E3006FAF07 /* ContributorsRouterImpl.m in Sources */,
 				327E3056257069EB00CA41D2 /* UIView+Extentions.swift in Sources */,
+				32BA43892571A974006FAF07 /* ContributorsModel.m in Sources */,
+				32BA436E2571A186006FAF07 /* ContributorsPresenterImpl.m in Sources */,
 				327E30402570515400CA41D2 /* NetworkClient.m in Sources */,
 				327E30142570202700CA41D2 /* HomeRouterImpl.m in Sources */,
 				327E302A2570310300CA41D2 /* main.m in Sources */,
@@ -440,10 +541,13 @@
 				327E302525702D3300CA41D2 /* HomeViewController.swift in Sources */,
 				327E30502570641D00CA41D2 /* UIViewControllerExtension.swift in Sources */,
 				327E304D25705F6A00CA41D2 /* RepoModel.m in Sources */,
+				32BA43752571A238006FAF07 /* ContributorsInteractorImpl.m in Sources */,
 				327E306D2571582A00CA41D2 /* RepoDetailsPresenterImpl.m in Sources */,
 				327E3076257159C800CA41D2 /* RepoDetailsRouterImpl.m in Sources */,
 				327E307C25715A9C00CA41D2 /* RepoDetailsInteractorImpl.m in Sources */,
+				32BA43672571A134006FAF07 /* ContributorsViewController.swift in Sources */,
 				3276F39725718092005D2C07 /* ChartColorTemplates.swift in Sources */,
+				323E09E72571B0D60039A07C /* ContributorsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
