@@ -7,3 +7,5 @@
 
 #import "HomeView.h"
 #import "HomePresenterImpl.h"
+#import "RepoDetailsView.h"
+#import "RepoDetailsPresenterImpl.h"

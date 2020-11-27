@@ -23,6 +23,11 @@
 		327E304D25705F6A00CA41D2 /* RepoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 327E304C25705F6A00CA41D2 /* RepoModel.m */; };
 		327E30502570641D00CA41D2 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327E304F2570641D00CA41D2 /* UIViewControllerExtension.swift */; };
 		327E3056257069EB00CA41D2 /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327E3055257069EB00CA41D2 /* UIView+Extentions.swift */; };
+		327E30602571573E00CA41D2 /* RepoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327E305E2571573E00CA41D2 /* RepoDetailsViewController.swift */; };
+		327E30612571573E00CA41D2 /* RepoDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327E305F2571573E00CA41D2 /* RepoDetailsViewController.xib */; };
+		327E306D2571582A00CA41D2 /* RepoDetailsPresenterImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 327E306C2571582A00CA41D2 /* RepoDetailsPresenterImpl.m */; };
+		327E3076257159C800CA41D2 /* RepoDetailsRouterImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 327E3075257159C800CA41D2 /* RepoDetailsRouterImpl.m */; };
+		327E307C25715A9C00CA41D2 /* RepoDetailsInteractorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 327E307B25715A9C00CA41D2 /* RepoDetailsInteractorImpl.m */; };
 		8EA8D0EF81A2872C20A75476 /* Pods_RobustaTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C2B624C22F2C44CB0E1ABA /* Pods_RobustaTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +62,18 @@
 		327E304C25705F6A00CA41D2 /* RepoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepoModel.m; sourceTree = "<group>"; };
 		327E304F2570641D00CA41D2 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		327E3055257069EB00CA41D2 /* UIView+Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extentions.swift"; sourceTree = "<group>"; };
+		327E305E2571573E00CA41D2 /* RepoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsViewController.swift; sourceTree = "<group>"; };
+		327E305F2571573E00CA41D2 /* RepoDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoDetailsViewController.xib; sourceTree = "<group>"; };
+		327E30692571578C00CA41D2 /* RepoDetailsPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepoDetailsPresenter.h; sourceTree = "<group>"; };
+		327E306A257157B100CA41D2 /* RepoDetailsPresenterImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepoDetailsPresenterImpl.h; sourceTree = "<group>"; };
+		327E306C2571582A00CA41D2 /* RepoDetailsPresenterImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepoDetailsPresenterImpl.m; sourceTree = "<group>"; };
+		327E306F257158BE00CA41D2 /* RepoDetailsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepoDetailsView.h; sourceTree = "<group>"; };
+		327E30712571594D00CA41D2 /* RepoDetailsRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepoDetailsRouter.h; sourceTree = "<group>"; };
+		327E30732571598F00CA41D2 /* RepoDetailsRouterImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepoDetailsRouterImpl.h; sourceTree = "<group>"; };
+		327E3075257159C800CA41D2 /* RepoDetailsRouterImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepoDetailsRouterImpl.m; sourceTree = "<group>"; };
+		327E307825715A3400CA41D2 /* RepoDetailsInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepoDetailsInteractor.h; sourceTree = "<group>"; };
+		327E307925715A5500CA41D2 /* RepoDetailsInteractorImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepoDetailsInteractorImpl.h; sourceTree = "<group>"; };
+		327E307B25715A9C00CA41D2 /* RepoDetailsInteractorImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepoDetailsInteractorImpl.m; sourceTree = "<group>"; };
 		85172ED588BF9050E6D00F79 /* Pods-RobustaTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RobustaTask.debug.xcconfig"; path = "Target Support Files/Pods-RobustaTask/Pods-RobustaTask.debug.xcconfig"; sourceTree = "<group>"; };
 		E3C2B624C22F2C44CB0E1ABA /* Pods_RobustaTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RobustaTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,9 +111,9 @@
 		327E2FD12570174E00CA41D2 /* RobustaTask */ = {
 			isa = PBXGroup;
 			children = (
+				327E305C2571570C00CA41D2 /* RepoDetailsScene */,
 				327E303D2570512E00CA41D2 /* Network */,
 				327E3031257035A500CA41D2 /* Helpers */,
-				327E30292570310300CA41D2 /* main.m */,
 				327E2FF02570178D00CA41D2 /* HomeScene */,
 				327E2FD22570174E00CA41D2 /* AppDelegate.h */,
 				327E2FD32570174E00CA41D2 /* AppDelegate.m */,
@@ -104,6 +121,7 @@
 				327E2FE02570174F00CA41D2 /* LaunchScreen.storyboard */,
 				327E2FE32570174F00CA41D2 /* Info.plist */,
 				327E300925701A0900CA41D2 /* RobustaTask-Bridging-Header.h */,
+				327E30292570310300CA41D2 /* main.m */,
 			);
 			path = RobustaTask;
 			sourceTree = "<group>";
@@ -198,6 +216,73 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		327E305C2571570C00CA41D2 /* RepoDetailsScene */ = {
+			isa = PBXGroup;
+			children = (
+				327E30682571575C00CA41D2 /* Model */,
+				327E30672571575500CA41D2 /* Interactor */,
+				327E30662571574F00CA41D2 /* Router */,
+				327E30652571574B00CA41D2 /* View */,
+				327E30642571574400CA41D2 /* Presenter */,
+				327E305D2571572400CA41D2 /* ViewController */,
+			);
+			path = RepoDetailsScene;
+			sourceTree = "<group>";
+		};
+		327E305D2571572400CA41D2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				327E305E2571573E00CA41D2 /* RepoDetailsViewController.swift */,
+				327E305F2571573E00CA41D2 /* RepoDetailsViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		327E30642571574400CA41D2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				327E30692571578C00CA41D2 /* RepoDetailsPresenter.h */,
+				327E306A257157B100CA41D2 /* RepoDetailsPresenterImpl.h */,
+				327E306C2571582A00CA41D2 /* RepoDetailsPresenterImpl.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		327E30652571574B00CA41D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				327E306F257158BE00CA41D2 /* RepoDetailsView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		327E30662571574F00CA41D2 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				327E30712571594D00CA41D2 /* RepoDetailsRouter.h */,
+				327E30732571598F00CA41D2 /* RepoDetailsRouterImpl.h */,
+				327E3075257159C800CA41D2 /* RepoDetailsRouterImpl.m */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		327E30672571575500CA41D2 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				327E307825715A3400CA41D2 /* RepoDetailsInteractor.h */,
+				327E307925715A5500CA41D2 /* RepoDetailsInteractorImpl.h */,
+				327E307B25715A9C00CA41D2 /* RepoDetailsInteractorImpl.m */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		327E30682571575C00CA41D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4E670526A240CB719F7A839E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +361,7 @@
 			files = (
 				327E2FE22570174F00CA41D2 /* LaunchScreen.storyboard in Resources */,
 				327E2FDF2570174F00CA41D2 /* Assets.xcassets in Resources */,
+				327E30612571573E00CA41D2 /* RepoDetailsViewController.xib in Resources */,
 				327E303B257036F100CA41D2 /* HomeTableViewCell.xib in Resources */,
 				327E302625702D3300CA41D2 /* HomeViewController.xib in Resources */,
 			);
@@ -338,10 +424,14 @@
 				327E30142570202700CA41D2 /* HomeRouterImpl.m in Sources */,
 				327E302A2570310300CA41D2 /* main.m in Sources */,
 				327E3033257035CC00CA41D2 /* UITableView + Extensions.swift in Sources */,
+				327E30602571573E00CA41D2 /* RepoDetailsViewController.swift in Sources */,
 				327E303A257036F100CA41D2 /* HomeTableViewCell.swift in Sources */,
 				327E302525702D3300CA41D2 /* HomeViewController.swift in Sources */,
 				327E30502570641D00CA41D2 /* UIViewControllerExtension.swift in Sources */,
 				327E304D25705F6A00CA41D2 /* RepoModel.m in Sources */,
+				327E306D2571582A00CA41D2 /* RepoDetailsPresenterImpl.m in Sources */,
+				327E3076257159C800CA41D2 /* RepoDetailsRouterImpl.m in Sources */,
+				327E307C25715A9C00CA41D2 /* RepoDetailsInteractorImpl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

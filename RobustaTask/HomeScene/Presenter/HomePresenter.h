@@ -19,6 +19,7 @@
 
 -(void) initWithView: (id < HomeView >) view interactor: (id < HomeInteractor >) interactor router: (id < HomeRouter >) router ;
 -(void) viewDidLoad;
+-(void) didSelectRepoAtIndex: (int) index;
 -(NSUInteger) repositoriesCount;
 -(RepoModel *) getItemAtIndex: (int) index;
 @end

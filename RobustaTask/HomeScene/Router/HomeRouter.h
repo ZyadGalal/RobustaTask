@@ -6,10 +6,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "HomeView.h"
 
 @protocol HomeRouter < NSObject >
 
 +(UIViewController *) createHomeView;
-
+-(void) navigateToRepoDetailsFromView: (id<HomeView>) view;
 @end

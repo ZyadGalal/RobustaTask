@@ -47,5 +47,10 @@
     return self.repositories[index];
 }
 
+- (void)didSelectRepoAtIndex:(int)index {
+    [router navigateToRepoDetailsFromView:view];
+}
+
+
 
 @end

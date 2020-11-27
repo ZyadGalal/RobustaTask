@@ -63,3 +63,9 @@ extension HomeViewController: UITableViewDataSource{
         return cell
     }
 }
+
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelectRepo(at: Int32(indexPath.row))
+    }
+}
