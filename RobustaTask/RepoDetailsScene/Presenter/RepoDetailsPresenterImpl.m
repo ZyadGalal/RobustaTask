@@ -8,9 +8,10 @@
 #import <Foundation/Foundation.h>
 #import "RepoDetailsPresenterImpl.h"
 
+@interface RepoDetailsPresenterImpl()
+@end
+
 @implementation RepoDetailsPresenterImpl
-
-
 
 @synthesize interactor;
 @synthesize router;
@@ -25,5 +26,30 @@
     self.model = model;
 }
 
+-(void) viewDidLoad {
+    [self getLanguages];
+}
+
+- (void)didClickOnGithubButton {
+    if ([[UIApplication sharedApplication] canOpenURL:model.githubLink]) {
+        [[UIApplication sharedApplication] openURL:model.githubLink options:@{} completionHandler:nil];
+    }
+}
+
+-(void) getLanguages {
+    [self.view showIndicator];
+    [interactor getUsedLanguagesFromURL:model.languagesLink Completion:^(NSDictionary * _Nullable response, NSError * _Nullable error) {
+        [self.view hideIndicator];
+        if (error) {
+            [self.view didFailFetchingDataWithError:error.localizedDescription];
+        }
+        int totalLinesOfCode = 0;
+        for (id key in response) {
+            id value = response[key];
+            totalLinesOfCode = totalLinesOfCode + [value intValue];
+        }
+        [self.view updateUIWithModel:self.model languages:response totalLines:totalLinesOfCode];
+    }];
+}
 
 @end

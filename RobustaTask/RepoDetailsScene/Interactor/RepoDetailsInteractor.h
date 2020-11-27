@@ -9,5 +9,9 @@
 
 @protocol RepoDetailsInteractor <NSObject>
 
+typedef void (^comp)(NSDictionary* _Nullable response , NSError* _Nullable error);
+
+
+-(void) getUsedLanguagesFromURL: (NSURL *) url Completion:(comp) completionHandler;
 
 @end

@@ -19,22 +19,35 @@
         }
         else{
             NSError *error = nil;
-            NSArray *reposJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+            NSArray *responseJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
             if (error) {
                 completion(nil,error);
                 return;
             }
+
             NSMutableArray<RepoModel *> *repos = NSMutableArray.new;
-            for (NSDictionary * repoDict in reposJSON) {
+            for (NSDictionary * repoDict in responseJSON) {
                 NSString *name = repoDict[@"name"];
                 NSDictionary *ownerDict = repoDict[@"owner"];
                 NSString *ownerName = ownerDict[@"login"];
                 NSString *ownerAvatar = ownerDict[@"avatar_url"];
-                
+                NSString *contributorsURL = repoDict[@"contributors_url"];
+                NSString *githubLink = repoDict[@"html_url"];
+                NSString *languageLink = repoDict[@"languages_url"];
+                NSString *description = repoDict[@"description"];
                 RepoModel *repository = RepoModel.new;
                 repository.repoName = name;
                 repository.ownerName = ownerName;
                 repository.ownerAvatarURL = [[NSURL alloc] initWithString:ownerAvatar];
+                repository.contributorsURL = [[NSURL alloc] initWithString:contributorsURL];
+                repository.githubLink = [[NSURL alloc] initWithString:githubLink];
+                repository.languagesLink = [[NSURL alloc] initWithString:languageLink];
+                if ([description isKindOfClass:[NSString class]]){
+                    repository.repoDescription = description;
+                }
+                else{
+                    repository.repoDescription = nil;
+                }
                 [repos addObject:repository];
             }
             completion(repos , nil);

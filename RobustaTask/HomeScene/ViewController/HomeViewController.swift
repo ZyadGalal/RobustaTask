@@ -42,7 +42,9 @@ extension HomeViewController: HomeView {
     }
     
     func didFailFetchingDataWithError(_ error: String!) {
-        self.showAlert(title: "Error", message: error) { _ in}
+        DispatchQueue.main.async {
+            self.showAlert(title: "Error", message: error) { _ in}
+        }
     }
     
     

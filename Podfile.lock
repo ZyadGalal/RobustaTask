@@ -1,22 +1,28 @@
 PODS:
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - Kingfisher (5.15.7):
     - Kingfisher/Core (= 5.15.7)
   - Kingfisher/Core (5.15.7)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - Charts
   - Kingfisher
   - SVProgressHUD
 
 SPEC REPOS:
   trunk:
+    - Charts
     - Kingfisher
     - SVProgressHUD
 
 SPEC CHECKSUMS:
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   Kingfisher: 6e1a13523fcb1c86924ce53affe4ac957e544d59
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 29c5682cd337df5100d8c196665fcb227626284c
+PODFILE CHECKSUM: cf21d148fa8fa5cc29572f99cd947c8d055089cf
 
 COCOAPODS: 1.10.0

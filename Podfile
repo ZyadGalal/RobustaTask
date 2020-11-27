@@ -8,4 +8,5 @@ target 'RobustaTask' do
   # Pods for RobustaTask
 pod 'Kingfisher'
 pod 'SVProgressHUD'
+pod 'Charts'
 end

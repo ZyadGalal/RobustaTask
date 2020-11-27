@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3276F39725718092005D2C07 /* ChartColorTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276F39625718092005D2C07 /* ChartColorTemplates.swift */; };
 		327E2FD42570174E00CA41D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 327E2FD32570174E00CA41D2 /* AppDelegate.m */; };
 		327E2FDF2570174F00CA41D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327E2FDE2570174F00CA41D2 /* Assets.xcassets */; };
 		327E2FE22570174F00CA41D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 327E2FE02570174F00CA41D2 /* LaunchScreen.storyboard */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		27175006A99153B5FB24F334 /* Pods-RobustaTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RobustaTask.release.xcconfig"; path = "Target Support Files/Pods-RobustaTask/Pods-RobustaTask.release.xcconfig"; sourceTree = "<group>"; };
+		3276F39625718092005D2C07 /* ChartColorTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColorTemplates.swift; sourceTree = "<group>"; };
 		327E2FCF2570174E00CA41D2 /* RobustaTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobustaTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		327E2FD22570174E00CA41D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		327E2FD32570174E00CA41D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3276F3952571807B005D2C07 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3276F39625718092005D2C07 /* ChartColorTemplates.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		327E2FC62570174E00CA41D2 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 		327E2FD12570174E00CA41D2 /* RobustaTask */ = {
 			isa = PBXGroup;
 			children = (
+				3276F3952571807B005D2C07 /* Utils */,
 				327E305C2571570C00CA41D2 /* RepoDetailsScene */,
 				327E303D2570512E00CA41D2 /* Network */,
 				327E3031257035A500CA41D2 /* Helpers */,
@@ -432,6 +443,7 @@
 				327E306D2571582A00CA41D2 /* RepoDetailsPresenterImpl.m in Sources */,
 				327E3076257159C800CA41D2 /* RepoDetailsRouterImpl.m in Sources */,
 				327E307C25715A9C00CA41D2 /* RepoDetailsInteractorImpl.m in Sources */,
+				3276F39725718092005D2C07 /* ChartColorTemplates.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
