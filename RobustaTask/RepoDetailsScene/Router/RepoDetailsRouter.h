@@ -6,9 +6,9 @@
 //
 
 #import<UIkit/UIKit.h>
-
+#import "RepoModel.h"
 @protocol RepoDetailsRouter <NSObject>
 
-+(UIViewController *) createDetailsView ;
++(UIViewController *) createDetailsViewWithModel:(RepoModel *) model ;
 
 @end

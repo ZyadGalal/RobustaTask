@@ -10,19 +10,16 @@
 
 @implementation RepoDetailsRouterImpl
 
-
-
-+ (UIViewController *)createDetailsView {
++ (UIViewController *)createDetailsViewWithModel:(RepoModel *)model {
     RepoDetailsViewController *detailsView = [[RepoDetailsViewController alloc] initWithNibName:@"RepoDetailsViewController" bundle:nil];
     
     RepoDetailsInteractorImpl *interactor = [[RepoDetailsInteractorImpl alloc] init];
     RepoDetailsRouterImpl *router = [[RepoDetailsRouterImpl alloc] init];
     RepoDetailsPresenterImpl *presenter = [[RepoDetailsPresenterImpl alloc] init];
     
-    [presenter initWithView:detailsView interactor:interactor router:router];
+    [presenter initWithView:detailsView interactor:interactor router:router model:model];
     detailsView.presenter = presenter;
     return detailsView;
-    
 }
 
 @end

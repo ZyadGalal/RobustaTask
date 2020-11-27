@@ -48,7 +48,7 @@
 }
 
 - (void)didSelectRepoAtIndex:(int)index {
-    [router navigateToRepoDetailsFromView:view];
+    [router navigateToRepoDetailsFromView:view repoModel:self.repositories[index]];
 }
 
 

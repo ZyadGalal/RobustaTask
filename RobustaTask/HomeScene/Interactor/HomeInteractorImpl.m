@@ -38,7 +38,6 @@
                 [repos addObject:repository];
             }
             completion(repos , nil);
-            NSLog(@"%@",repos);
         }
     }];
 }

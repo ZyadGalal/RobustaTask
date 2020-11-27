@@ -24,8 +24,8 @@
     
 }
 
-- (void)navigateToRepoDetailsFromView:(id<HomeView>)view {
-    UIViewController *repoDetailsView = RepoDetailsRouterImpl.createDetailsView;
+- (void)navigateToRepoDetailsFromView:(id<HomeView>)view repoModel:(RepoModel *)model {
+    UIViewController *repoDetailsView = [RepoDetailsRouterImpl createDetailsViewWithModel:model];
     if ([view isKindOfClass:[UIViewController class]]) {
         [[(UIViewController *) view navigationController] pushViewController:repoDetailsView animated:YES];
     }

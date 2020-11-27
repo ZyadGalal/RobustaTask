@@ -14,6 +14,6 @@
 @property (nonatomic , strong) id <RepoDetailsView> view;
 @property (nonatomic , strong) id <RepoDetailsInteractor> interactor;
 @property (nonatomic , strong) id <RepoDetailsRouter> router;
-
--(void) initWithView: (id <RepoDetailsView> ) view interactor:(id <RepoDetailsInteractor>) interactor router:(id<RepoDetailsRouter>) router;
+@property (nonatomic , strong) RepoModel *model;
+-(void) initWithView: (id <RepoDetailsView> ) view interactor:(id <RepoDetailsInteractor>) interactor router:(id<RepoDetailsRouter>) router model:(RepoModel *)model;
 @end
