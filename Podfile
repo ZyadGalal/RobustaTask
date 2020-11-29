@@ -10,3 +10,7 @@ pod 'Kingfisher'
 pod 'SVProgressHUD'
 pod 'Charts'
 end
+
+target 'RobustaTaskTests' do
+
+end
