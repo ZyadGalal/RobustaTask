@@ -48,6 +48,7 @@ class RepoDetailsViewController: UIViewController {
     func updateChartsData(from languagesDictionary: [String:Int] , totalLines: Int)
     {
         var chartsData = [PieChartDataEntry]()
+        //loop on languages dictionary to calculate precntage and append it to charts
         for (key , value) in languagesDictionary {
             let pieChartDataEntry = PieChartDataEntry(value: ((Double(value) / Double(totalLines)) * 100), label: key)
             chartsData.append(pieChartDataEntry)

@@ -44,7 +44,9 @@
                 return;
             }
             strongSelf.context = [strongSelf managedObjectContext];
+            //remove all records from core data entity
             [strongSelf deleteReposFromCoreData];
+            //Loop on response to save in core data
             for (NSDictionary * repoDict in responseJSON) {
                 NSDictionary *ownerDict = repoDict[@"owner"];
                 NSString *description = repoDict[@"description"];
@@ -58,11 +60,10 @@
                 if ([description isKindOfClass:[NSString class]]){
                     repository.repoDescription = description;
                 }
-                else{
-                    repository.repoDescription = nil;
-                }
+
                 [strongSelf saveDataToLocalDatabaseWithModel:repository];
             }
+            //get first page to return
             NSMutableArray<RepoModel *> *repos = NSMutableArray.new;
             [repos addObjectsFromArray: [strongSelf fetchDataWithOffset:0]];
             completion(repos , nil);
@@ -89,7 +90,7 @@
         NSLog(@"Save Failed! %@ %@", error, [error localizedDescription]);
     }
 }
--(NSArray *) fetchDataWithOffset: (int) offset {
+-(NSArray *) fetchDataWithOffset: (NSUInteger) offset {
     //self.context = [self managedObjectContext];
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"Repo" inManagedObjectContext:self.context]];
@@ -119,11 +120,11 @@
     return context;
 }
 
-- (NSUInteger *)numberOfReposInEntity {
+- (NSUInteger )numberOfReposInEntity {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Repo"];
     NSError *deleteError = nil;
 
-    NSUInteger* objectsCount = (NSUInteger) [self.context countForFetchRequest:request error:&deleteError];
+    NSUInteger objectsCount = [self.context countForFetchRequest:request error:&deleteError];
     if (deleteError) {
         NSLog(@"error while deleting %@", deleteError);
     }

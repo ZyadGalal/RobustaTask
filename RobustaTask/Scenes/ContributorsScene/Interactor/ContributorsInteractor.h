@@ -9,6 +9,6 @@
 
 typedef void (^completionHandler)(NSMutableArray* _Nullable response , NSError* _Nullable error);
 
--(void) fetchContributorsWithURL:(NSURL *) url Completion:(completionHandler) completion;
+-(void) fetchContributorsWithURL:(NSURL * _Nonnull) url Completion:(completionHandler _Nullable) completion;
 
 @end

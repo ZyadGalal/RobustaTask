@@ -10,7 +10,8 @@
 
 @interface HomePresenterImpl()
 @property (strong , nonatomic) NSMutableArray<RepoModel *> *repositories;
-@property (nonatomic) NSUInteger *numberOfRepos;
+
+@property (nonatomic) NSUInteger numberOfRepos;
 
 @end
 
@@ -45,21 +46,21 @@
             return ;
         }
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        [self.view hideIndicator];
+        [strongSelf.view hideIndicator];
         if (error) {
-            [self.view didFailFetchingDataWithError:error.localizedDescription];
+            [strongSelf.view didFailFetchingDataWithError:error.localizedDescription];
         }
         else{
-            self.repositories = response;
-            self.numberOfRepos = [self.interactor numberOfReposInEntity];
-            [self.view didFetchDataSuccessfully];
+            strongSelf.repositories = response;
+            strongSelf.numberOfRepos = [strongSelf.interactor numberOfReposInEntity];
+            [strongSelf.view didFetchDataSuccessfully];
         }
     }];
 }
+//MARK: -fetch new page from coredata
 - (void)fetchNewPage {
     self.isFetchingNewPage = TRUE;
     if ([self.repositories count] < self.numberOfRepos){
-        NSLog(@"here we go");
         [self.repositories addObjectsFromArray:[interactor fetchDataWithOffset:self.repositories.count]];
         [self.view didFetchDataSuccessfully];
         self.isFetchingNewPage = FALSE;

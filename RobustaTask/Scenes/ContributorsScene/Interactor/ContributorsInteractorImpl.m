@@ -33,12 +33,11 @@
             }
 
             NSMutableArray<ContributorsModel *> *contributors = NSMutableArray.new;
-            for (NSDictionary * repoDict in responseJSON) {
+            for (NSDictionary * contributorDictionary in responseJSON) {
                 ContributorsModel *contributor = ContributorsModel.new;
-                contributor.contributorName = repoDict[@"login"];
-                contributor.contributorAvatarURL = [[NSURL alloc] initWithString:repoDict[@"avatar_url"]];
+                contributor.contributorName = contributorDictionary[@"login"];
+                contributor.contributorAvatarURL = [[NSURL alloc] initWithString:contributorDictionary[@"avatar_url"]];
                 
-               
                 [contributors addObject:contributor];
             }
             completion(contributors , nil);

@@ -5,24 +5,40 @@ PODS:
   - Kingfisher (5.15.7):
     - Kingfisher/Core (= 5.15.7)
   - Kingfisher/Core (5.15.7)
+  - OHHTTPStubs (9.0.0):
+    - OHHTTPStubs/Default (= 9.0.0)
+  - OHHTTPStubs/Core (9.0.0)
+  - OHHTTPStubs/Default (9.0.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (9.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (9.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (9.0.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Charts
   - Kingfisher
+  - OHHTTPStubs
   - SVProgressHUD
 
 SPEC REPOS:
   trunk:
     - Charts
     - Kingfisher
+    - OHHTTPStubs
     - SVProgressHUD
 
 SPEC CHECKSUMS:
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   Kingfisher: 6e1a13523fcb1c86924ce53affe4ac957e544d59
+  OHHTTPStubs: cb29d2a9d09a828ecb93349a2b0c64f99e0db89f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: cf21d148fa8fa5cc29572f99cd947c8d055089cf
+PODFILE CHECKSUM: b322e914349caf4c72777a08f34a6e5a1dbeba8c
 
 COCOAPODS: 1.10.0

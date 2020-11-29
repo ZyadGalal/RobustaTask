@@ -11,6 +11,6 @@
 
 typedef void (^completion)(NSData* _Nullable  data , NSError* _Nullable  error);
 
-+(void) performRequestWithURL: (NSURL*) url CompletionHandler: (completion) completion;
++(void) performRequestWithURL: (NSURL* _Nonnull) url CompletionHandler: (completion _Nullable) completion;
 
 @end

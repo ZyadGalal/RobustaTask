@@ -12,6 +12,6 @@
 typedef void (^comp)(NSDictionary* _Nullable response , NSError* _Nullable error);
 
 
--(void) getUsedLanguagesFromURL: (NSURL *) url Completion:(comp) completionHandler;
+-(void) getUsedLanguagesFromURL: (NSURL  * _Nonnull ) url Completion:(comp _Nullable) completionHandler;
 
 @end

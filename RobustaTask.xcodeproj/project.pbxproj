@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		323E09E72571B0D60039A07C /* ContributorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323E09E52571B0D60039A07C /* ContributorsTableViewCell.swift */; };
 		323E09E82571B0D60039A07C /* ContributorsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 323E09E62571B0D60039A07C /* ContributorsTableViewCell.xib */; };
+		324939022574269400DFEE41 /* RepoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 327E304C25705F6A00CA41D2 /* RepoModel.m */; };
 		3276F39725718092005D2C07 /* ChartColorTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276F39625718092005D2C07 /* ChartColorTemplates.swift */; };
 		327E2FD42570174E00CA41D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 327E2FD32570174E00CA41D2 /* AppDelegate.m */; };
 		327E2FDF2570174F00CA41D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327E2FDE2570174F00CA41D2 /* Assets.xcassets */; };
@@ -23,7 +24,6 @@
 		327E303A257036F100CA41D2 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327E3038257036F100CA41D2 /* HomeTableViewCell.swift */; };
 		327E303B257036F100CA41D2 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327E3039257036F100CA41D2 /* HomeTableViewCell.xib */; };
 		327E30402570515400CA41D2 /* NetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 327E303F2570515400CA41D2 /* NetworkClient.m */; };
-		327E304D25705F6A00CA41D2 /* RepoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 327E304C25705F6A00CA41D2 /* RepoModel.m */; };
 		327E30502570641D00CA41D2 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327E304F2570641D00CA41D2 /* UIViewControllerExtension.swift */; };
 		327E3056257069EB00CA41D2 /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327E3055257069EB00CA41D2 /* UIView+Extentions.swift */; };
 		327E30602571573E00CA41D2 /* RepoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327E305E2571573E00CA41D2 /* RepoDetailsViewController.swift */; };
@@ -42,9 +42,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00D894AB983D008120038EB2 /* Pods-RobustaTaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RobustaTaskTests.release.xcconfig"; path = "Target Support Files/Pods-RobustaTaskTests/Pods-RobustaTaskTests.release.xcconfig"; sourceTree = "<group>"; };
+		025472D36C65C7A791778664 /* libPods-RobustaTaskTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RobustaTaskTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27175006A99153B5FB24F334 /* Pods-RobustaTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RobustaTask.release.xcconfig"; path = "Target Support Files/Pods-RobustaTask/Pods-RobustaTask.release.xcconfig"; sourceTree = "<group>"; };
 		323E09E52571B0D60039A07C /* ContributorsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributorsTableViewCell.swift; sourceTree = "<group>"; };
 		323E09E62571B0D60039A07C /* ContributorsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContributorsTableViewCell.xib; sourceTree = "<group>"; };
+		324938EE2574239400DFEE41 /* HomeInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeInteractor.h; sourceTree = "<group>"; };
 		3276F39625718092005D2C07 /* ChartColorTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColorTemplates.swift; sourceTree = "<group>"; };
 		327E2FCF2570174E00CA41D2 /* RobustaTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobustaTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		327E2FD22570174E00CA41D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,7 +57,6 @@
 		327E2FE32570174F00CA41D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		327E2FF7257017C200CA41D2 /* HomePresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePresenter.h; sourceTree = "<group>"; };
 		327E2FF8257017DE00CA41D2 /* HomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeView.h; sourceTree = "<group>"; };
-		327E2FFC2570188D00CA41D2 /* HomeInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeInteractor.h; sourceTree = "<group>"; };
 		327E2FFE257018CD00CA41D2 /* HomeRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeRouter.h; sourceTree = "<group>"; };
 		327E300925701A0900CA41D2 /* RobustaTask-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RobustaTask-Bridging-Header.h"; sourceTree = "<group>"; };
 		327E300C25701A6500CA41D2 /* HomePresenterImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePresenterImpl.h; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		32BA43882571A974006FAF07 /* ContributorsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContributorsModel.m; sourceTree = "<group>"; };
 		32C9ADDF257277A200EEB744 /* Repo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Repo.xcdatamodel; sourceTree = "<group>"; };
 		85172ED588BF9050E6D00F79 /* Pods-RobustaTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RobustaTask.debug.xcconfig"; path = "Target Support Files/Pods-RobustaTask/Pods-RobustaTask.debug.xcconfig"; sourceTree = "<group>"; };
+		B11223D1113FA7165DC368DD /* Pods-RobustaTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RobustaTaskTests.debug.xcconfig"; path = "Target Support Files/Pods-RobustaTaskTests/Pods-RobustaTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E3C2B624C22F2C44CB0E1ABA /* Pods_RobustaTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RobustaTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -147,18 +150,15 @@
 		327E2FD12570174E00CA41D2 /* RobustaTask */ = {
 			isa = PBXGroup;
 			children = (
-				32BA43622571A07E006FAF07 /* Scenes */,
-				3276F3952571807B005D2C07 /* Utils */,
-				327E303D2570512E00CA41D2 /* Network */,
-				327E3031257035A500CA41D2 /* Helpers */,
-				327E2FD22570174E00CA41D2 /* AppDelegate.h */,
-				327E2FD32570174E00CA41D2 /* AppDelegate.m */,
-				327E2FDE2570174F00CA41D2 /* Assets.xcassets */,
-				327E2FE02570174F00CA41D2 /* LaunchScreen.storyboard */,
 				327E2FE32570174F00CA41D2 /* Info.plist */,
 				327E300925701A0900CA41D2 /* RobustaTask-Bridging-Header.h */,
-				327E30292570310300CA41D2 /* main.m */,
-				32C9ADDE257277A200EEB744 /* RobustaTask.xcdatamodeld */,
+				32C9AE2F2573202600EEB744 /* CoreDataModel */,
+				32C9AE2E25731FFA00EEB744 /* Comon */,
+				32BA43622571A07E006FAF07 /* Scenes */,
+				3276F3952571807B005D2C07 /* Utils */,
+				327E303D2570512E00CA41D2 /* Network Layer */,
+				327E3031257035A500CA41D2 /* Extensions */,
+				327E2FDE2570174F00CA41D2 /* Assets.xcassets */,
 			);
 			path = RobustaTask;
 			sourceTree = "<group>";
@@ -208,9 +208,9 @@
 		327E2FFB2570186600CA41D2 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				327E2FFC2570188D00CA41D2 /* HomeInteractor.h */,
 				327E301B2570240D00CA41D2 /* HomeInteractorImpl.h */,
 				327E301C2570243B00CA41D2 /* HomeInteractorImpl.m */,
+				324938EE2574239400DFEE41 /* HomeInteractor.h */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -225,23 +225,23 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		327E3031257035A500CA41D2 /* Helpers */ = {
+		327E3031257035A500CA41D2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				327E3055257069EB00CA41D2 /* UIView+Extentions.swift */,
 				327E304F2570641D00CA41D2 /* UIViewControllerExtension.swift */,
 				327E3032257035CC00CA41D2 /* UITableView + Extensions.swift */,
 			);
-			path = Helpers;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
-		327E303D2570512E00CA41D2 /* Network */ = {
+		327E303D2570512E00CA41D2 /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
 				327E303E2570514800CA41D2 /* NetworkClient.h */,
 				327E303F2570515400CA41D2 /* NetworkClient.m */,
 			);
-			path = Network;
+			path = "Network Layer";
 			sourceTree = "<group>";
 		};
 		327E30462570597400CA41D2 /* Model */ = {
@@ -393,11 +393,32 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		32C9AE2E25731FFA00EEB744 /* Comon */ = {
+			isa = PBXGroup;
+			children = (
+				327E2FE02570174F00CA41D2 /* LaunchScreen.storyboard */,
+				327E2FD22570174E00CA41D2 /* AppDelegate.h */,
+				327E2FD32570174E00CA41D2 /* AppDelegate.m */,
+				327E30292570310300CA41D2 /* main.m */,
+			);
+			path = Comon;
+			sourceTree = "<group>";
+		};
+		32C9AE2F2573202600EEB744 /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				32C9ADDE257277A200EEB744 /* RobustaTask.xcdatamodeld */,
+			);
+			path = CoreDataModel;
+			sourceTree = "<group>";
+		};
 		4E670526A240CB719F7A839E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				85172ED588BF9050E6D00F79 /* Pods-RobustaTask.debug.xcconfig */,
 				27175006A99153B5FB24F334 /* Pods-RobustaTask.release.xcconfig */,
+				B11223D1113FA7165DC368DD /* Pods-RobustaTaskTests.debug.xcconfig */,
+				00D894AB983D008120038EB2 /* Pods-RobustaTaskTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -406,6 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				E3C2B624C22F2C44CB0E1ABA /* Pods_RobustaTask.framework */,
+				025472D36C65C7A791778664 /* libPods-RobustaTaskTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -541,10 +563,10 @@
 				327E302A2570310300CA41D2 /* main.m in Sources */,
 				327E3033257035CC00CA41D2 /* UITableView + Extensions.swift in Sources */,
 				327E30602571573E00CA41D2 /* RepoDetailsViewController.swift in Sources */,
+				324939022574269400DFEE41 /* RepoModel.m in Sources */,
 				327E303A257036F100CA41D2 /* HomeTableViewCell.swift in Sources */,
 				327E302525702D3300CA41D2 /* HomeViewController.swift in Sources */,
 				327E30502570641D00CA41D2 /* UIViewControllerExtension.swift in Sources */,
-				327E304D25705F6A00CA41D2 /* RepoModel.m in Sources */,
 				32BA43752571A238006FAF07 /* ContributorsInteractorImpl.m in Sources */,
 				327E306D2571582A00CA41D2 /* RepoDetailsPresenterImpl.m in Sources */,
 				327E3076257159C800CA41D2 /* RepoDetailsRouterImpl.m in Sources */,
