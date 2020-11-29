@@ -10,6 +10,13 @@
 #import "ContributorsRouterImpl.h"
 @implementation RepoDetailsRouterImpl
 
+
+- (void)dealloc
+{
+    NSLog(@"deall form repo details Router");
+}
+
+
 + (UIViewController *)createDetailsViewWithModel:(RepoModel *)model {
     RepoDetailsViewController *detailsView = [[RepoDetailsViewController alloc] initWithNibName:@"RepoDetailsViewController" bundle:nil];
     

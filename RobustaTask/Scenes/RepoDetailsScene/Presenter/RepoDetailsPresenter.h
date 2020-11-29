@@ -11,7 +11,7 @@
 
 @protocol RepoDetailsPresenter <NSObject>
 
-@property (nonatomic , strong) id <RepoDetailsView> view;
+@property (nonatomic , weak) id <RepoDetailsView> view;
 @property (nonatomic , strong) id <RepoDetailsInteractor> interactor;
 @property (nonatomic , strong) id <RepoDetailsRouter> router;
 @property (nonatomic , strong) RepoModel *model;

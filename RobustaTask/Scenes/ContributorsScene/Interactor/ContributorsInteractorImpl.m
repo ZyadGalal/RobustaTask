@@ -9,8 +9,14 @@
 #import "ContributorsInteractorImpl.h"
 #import "NetworkClient.h"
 #import "ContributorsModel.h"
+
 @implementation ContributorsInteractorImpl
 
+
+- (void)dealloc
+{
+    NSLog(@"deall form repo contrib Interactor");
+}
 
 
 - (void)fetchContributorsWithURL:(NSURL *)url Completion:(completionHandler)completion {
@@ -28,12 +34,9 @@
 
             NSMutableArray<ContributorsModel *> *contributors = NSMutableArray.new;
             for (NSDictionary * repoDict in responseJSON) {
-                NSString *name = repoDict[@"login"];
-                NSString *avatar = repoDict[@"avatar_url"];
-
                 ContributorsModel *contributor = ContributorsModel.new;
-                contributor.contributorName = name;
-                contributor.contributorAvatarURL = [[NSURL alloc] initWithString:avatar];
+                contributor.contributorName = repoDict[@"login"];
+                contributor.contributorAvatarURL = [[NSURL alloc] initWithString:repoDict[@"avatar_url"]];
                 
                
                 [contributors addObject:contributor];

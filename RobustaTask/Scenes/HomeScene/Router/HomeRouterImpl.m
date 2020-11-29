@@ -9,8 +9,16 @@
 #import "HomeRouterImpl.h"
 #import "RobustaTask-Swift.h"
 #import "RepoDetailsRouterImpl.h"
+#import "HomePresenterImpl.h"
+#import "HomeInteractorImpl.h"
 
 @implementation HomeRouterImpl
+
+
+- (void)dealloc
+{
+    NSLog(@"deall form repo Home Router");
+}
 
 + (UIViewController *)createHomeView {
     HomeViewController *homeView = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];

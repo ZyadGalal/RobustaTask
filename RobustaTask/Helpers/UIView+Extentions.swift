@@ -64,51 +64,44 @@ extension UIView {
         }
     }
     
-    @IBInspectable
-    var shadowRadius: CGFloat {
+    @IBInspectable var shadowColor: UIColor? {
+        set {
+            layer.shadowColor = newValue!.cgColor
+        }
+        get {
+            if let color = layer.shadowColor {
+                return UIColor(cgColor: color)
+            }
+            else {
+                return nil
+            }
+        }
+    }
+    
+    @IBInspectable var shadowOpacity: Float {
+        set {
+            layer.shadowOpacity = newValue
+        }
+        get {
+            return layer.shadowOpacity
+        }
+    }
+    
+    @IBInspectable var shadowOffset: CGPoint {
+        set {
+            layer.shadowOffset = CGSize(width: newValue.x, height: newValue.y)
+        }
+        get {
+            return CGPoint(x: layer.shadowOffset.width, y:layer.shadowOffset.height)
+        }
+    }
+    
+    @IBInspectable var shadowRadius: CGFloat {
+        set {
+            layer.shadowRadius = newValue
+        }
         get {
             return layer.shadowRadius
         }
-        set {
-            layer.shadowColor = UIColor.black.cgColor
-            layer.shadowOffset = CGSize(width: 0, height: 2)
-            layer.shadowOpacity = 0.4
-            layer.shadowRadius = newValue
-        }
     }
-   /*
-    @IBInspectable
-    var shadowColor: UIColor {
-        get {
-            return self.shadowColor
-        }
-        set {
-            layer.shadowColor = shadowColor.cgColor
-//            layer.shadowOffset = CGSize(width: 0, height: 2)
-//            layer.shadowOpacity = 0.4
-//            layer.shadowRadius = shadowRadius
-        }
-    }
-   */
-}
-
-//
-// View for UILabel Accessory
-//
-extension UIView {
-    
-    func rightValidAccessoryView() -> UIView {
-        let imgView = UIImageView(image: UIImage(named: "check_valid"))
-        imgView.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-        imgView.backgroundColor = UIColor.clear
-        return imgView
-    }
-    
-    func rightInValidAccessoryView() -> UIView {
-        let imgView = UIImageView(image: UIImage(named: "check_invalid"))
-        imgView.frame = CGRect(x: self.cornerRadius, y: self.cornerRadius, width: 20, height: 20)
-        imgView.backgroundColor = UIColor.clear
-        return imgView
-    }
-    
 }

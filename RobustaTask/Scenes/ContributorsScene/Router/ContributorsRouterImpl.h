@@ -6,8 +6,7 @@
 //
 
 #import "ContributorsRouter.h"
-#import "ContributorsInteractorImpl.h"
-#import "ContributorsPresenterImpl.h"
+
 
 @interface ContributorsRouterImpl : NSObject<ContributorsRouter>
 

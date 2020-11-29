@@ -11,10 +11,10 @@
 
 @property (nonatomic , strong) NSString *repoName;
 @property (nonatomic , strong) NSString *ownerName;
-@property (nonatomic , strong) NSURL *ownerAvatarURL;
-@property (nonatomic , strong) NSURL *contributorsURL;
-@property (nonatomic , strong) NSURL *githubLink;
-@property (nonatomic , strong) NSURL *languagesLink;
-@property (nonatomic , strong)  NSString * _Nullable repoDescription;
+@property (nonatomic , strong) NSString *ownerAvatarURL;
+@property (nonatomic , strong) NSString *contributorsURL;
+@property (nonatomic , strong) NSString *githubLink;
+@property (nonatomic , strong) NSString *languagesLink;
+@property (nonatomic , strong) NSString * _Nullable repoDescription;
 
 @end

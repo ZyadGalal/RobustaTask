@@ -6,8 +6,7 @@
 //
 
 #import "HomeRouter.h"
-#import "HomePresenterImpl.h"
-#import "HomeInteractorImpl.h"
+
 @interface HomeRouterImpl : NSObject <HomeRouter>
 
 @end

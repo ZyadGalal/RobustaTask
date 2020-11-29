@@ -20,6 +20,9 @@ class RepoDetailsViewController: UIViewController {
     @IBOutlet weak var pieChartView: PieChartView!
     @objc var presenter: RepoDetailsPresenterImpl?
 
+    deinit {
+        print("Repo details deinit")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Details"
@@ -27,7 +30,6 @@ class RepoDetailsViewController: UIViewController {
         containerView.alpha = 0
         presenter?.viewDidLoad()
     }
-
     @IBAction func githubButtonClicked(_ sender: Any) {
         presenter?.didClickOnGithubButton()
     }
@@ -35,7 +37,7 @@ class RepoDetailsViewController: UIViewController {
     @IBAction func contributorsButtonClicked(_ sender: Any) {
         presenter?.didClickOnContributorsButton()
     }
-    
+
     func initPieChart()
     {
         let chartCenterText = NSMutableAttributedString(string: "Languages")
@@ -66,7 +68,6 @@ class RepoDetailsViewController: UIViewController {
         pFormatter.multiplier = 1
         pFormatter.percentSymbol = " %"
         chartData.setValueFormatter(DefaultValueFormatter(formatter: pFormatter))
-        
         chartData.setValueFont(.systemFont(ofSize: 11, weight: .light))
         chartData.setValueTextColor(.black)
         pieChartView.data = chartData
@@ -75,13 +76,14 @@ class RepoDetailsViewController: UIViewController {
 
 extension RepoDetailsViewController: RepoDetailsView {
     func updateUI(withOwnerName name: String!, repoName: String!, avatarURL url: URL!, repoDescription description: String!, languages: [AnyHashable : Any]!, totalLines: Int32) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else {return}
+        DispatchQueue.main.async {
             self.ownerImageView.kf.indicatorType = .activity
             self.ownerImageView.kf.setImage(with: url)
             self.ownerNameLabel.text = name
             self.repoNameLabel.text = repoName
-            self.updateChartsData(from: languages as! [String: Int], totalLines: Int(totalLines))
+            if let languages = languages as? [String : Int] {
+                self.updateChartsData(from: languages , totalLines: Int(totalLines))
+            }
             if let description = description {
                 self.repoDescriptionLabel.text = description
             }
@@ -97,24 +99,15 @@ extension RepoDetailsViewController: RepoDetailsView {
     
 
     func showIndicator() {
-        DispatchQueue.main.async {
-            SVProgressHUD.show(withStatus: "Loading")
-        }
+        SVProgressHUD.show(withStatus: "Loading")
     }
     
     func hideIndicator() {
-        DispatchQueue.main.async {
-            SVProgressHUD.dismiss()
-        }
-    }
-    
-    func updateUI(with model: RepoModel!, languages: [AnyHashable : Any]!, totalLines: Int32) {
+        SVProgressHUD.dismiss()
     }
     
     func didFailFetchingDataWithError(_ error: String!) {
-        DispatchQueue.main.async {
-            self.showAlert(title: "Error", message: error) { _ in}
-        }
+        self.showAlert(title: "Error", message: error) { _ in}
     }
     
 }

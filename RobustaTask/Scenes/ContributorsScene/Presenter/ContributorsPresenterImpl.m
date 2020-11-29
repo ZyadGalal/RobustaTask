@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ContributorsPresenterImpl.h"
+
 @interface ContributorsPresenterImpl()
 @property (nonatomic , strong) NSURL *contributorsURL;
 @property (nonatomic , strong) NSMutableArray<ContributorsModel *> *contributors;
@@ -17,6 +18,12 @@
 @synthesize interactor;
 @synthesize router;
 @synthesize view;
+
+
+- (void)dealloc
+{
+    NSLog(@"deall form repo contri presnenter");
+}
 
 - (void)initWithView:(id<ContributorsView>)view interactor:(id<ContributorsInteractor>)interactor router:(id<ContributorsRouter>)router contributorsURL:(NSURL *)url {
     self.view = view;
@@ -38,15 +45,21 @@
 }
 
 -(void) getContributors {
+    __weak typeof(self) weakSelf = self;
     [self.view showIndicator];
     [interactor fetchContributorsWithURL:self.contributorsURL Completion:^(NSMutableArray * _Nullable response, NSError * _Nullable error) {
-        [self.view hideIndicator];
+        if (weakSelf == nil) {
+            NSLog(@"self is nil");
+            return;
+        }
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.view hideIndicator];
         if (error) {
-            [self.view didFailFetchingDataWithError:error.localizedDescription];
+            [strongSelf.view didFailFetchingDataWithError:error.localizedDescription];
         }
         else{
-            self.contributors = response;
-            [self.view didFetchDataSuccessfully];
+            strongSelf.contributors = response;
+            [strongSelf.view didFetchDataSuccessfully];
         }
     }];
 }

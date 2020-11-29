@@ -7,8 +7,17 @@
 
 #import "ContributorsRouterImpl.h"
 #import "RobustaTask-Swift.h"
+#import "ContributorsInteractorImpl.h"
+#import "ContributorsPresenterImpl.h"
 
 @implementation ContributorsRouterImpl
+
+
+- (void)dealloc
+{
+    NSLog(@"deall form repo contrib Router");
+}
+
 
 + (UIViewController *)createDetailsViewWithContributorsURL:(NSURL *)url {
     ContributorsViewController *contributorsView = [[ContributorsViewController alloc] initWithNibName:@"ContributorsViewController" bundle:nil];

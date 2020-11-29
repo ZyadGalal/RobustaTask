@@ -10,6 +10,11 @@
 @implementation RepoDetailsInteractorImpl
 
 
+- (void)dealloc
+{
+    NSLog(@"deall form repo details Interactor");
+}
+
 
 - (void)getUsedLanguagesFromURL:(NSURL *)url Completion:(comp)completionHandler {
     [NetworkClient performRequestWithURL:url CompletionHandler:^(NSData * _Nullable data, NSError * _Nullable error) {

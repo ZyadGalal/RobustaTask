@@ -6,6 +6,8 @@
 //
 
 #import "HomeInteractor.h"
+#import <CoreData/CoreData.h>
+
 @interface HomeInteractorImpl : NSObject<HomeInteractor>
 
 @end

@@ -11,6 +11,9 @@ import SVProgressHUD
 
 class ContributorsViewController: UIViewController {
 
+    deinit {
+        print("contribut view controller deinit")
+    }
     @IBOutlet weak var contributorsTableView: UITableView!
     @objc var presenter: ContributorsPresenter?
     override func viewDidLoad() {
@@ -40,26 +43,19 @@ extension ContributorsViewController: UITableViewDataSource {
 }
 extension ContributorsViewController: ContributorsView {
     func didFetchDataSuccessfully() {
-        DispatchQueue.main.async {
-            self.contributorsTableView.reloadData()
-        }
+        self.contributorsTableView.reloadData()
+        
     }
     
     func didFailFetchingDataWithError(_ error: String!) {
-        DispatchQueue.main.async {
-            self.showAlert(title: "Error", message: error) { (action) in }
-        }
+        self.showAlert(title: "Error", message: error) { (action) in }
     }
     
     func showIndicator() {
-        DispatchQueue.main.async {
-            SVProgressHUD.show(withStatus: "Loading")
-        }
+        SVProgressHUD.show(withStatus: "Loading")
     }
     
     func hideIndicator() {
-        DispatchQueue.main.async {
-            SVProgressHUD.dismiss()
-        }
+        SVProgressHUD.dismiss()
     }
 }

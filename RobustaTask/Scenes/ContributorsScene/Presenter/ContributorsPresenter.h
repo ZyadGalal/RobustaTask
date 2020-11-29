@@ -12,7 +12,7 @@
 
 @protocol ContributorsPresenter <NSObject>
 
-@property (nonatomic , strong) id <ContributorsView> view;
+@property (nonatomic , weak) id <ContributorsView> view;
 @property (nonatomic , strong) id <ContributorsInteractor> interactor;
 @property (nonatomic , strong) id <ContributorsRouter> router;
 

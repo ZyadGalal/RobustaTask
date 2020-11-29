@@ -10,5 +10,10 @@
 @implementation RepoModel
 
 
+- (void)dealloc
+{
+    NSLog(@"deall form repo repo model");
+}
+
 
 @end

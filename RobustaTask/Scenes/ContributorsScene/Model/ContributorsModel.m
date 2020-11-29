@@ -9,4 +9,9 @@
 @implementation ContributorsModel
 
 
+- (void)dealloc
+{
+    NSLog(@"deall form contribu model");
+}
+
 @end

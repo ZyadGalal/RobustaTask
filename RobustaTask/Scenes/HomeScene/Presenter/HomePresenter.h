@@ -13,13 +13,15 @@
 
 @protocol HomePresenter< NSObject >
 
-@property (nonatomic , strong) id <HomeView> view;
+@property (nonatomic , weak) id <HomeView> view;
 @property (nonatomic , strong) id <HomeInteractor> interactor;
 @property (nonatomic , strong) id <HomeRouter> router;
+@property (nonatomic) BOOL isFetchingNewPage;
 
 -(void) initWithView: (id < HomeView >) view interactor: (id < HomeInteractor >) interactor router: (id < HomeRouter >) router ;
 -(void) viewDidLoad;
 -(void) didSelectRepoAtIndex: (int) index;
+-(void) fetchNewPage;
 -(NSUInteger) repositoriesCount;
 -(RepoModel *) getItemAtIndex: (int) index;
 @end
