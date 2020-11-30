@@ -28,7 +28,7 @@ class ContributorsViewController: UIViewController {
 }
 extension ContributorsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let itemsCount = presenter?.repositoriesCount() else {return 0}
+        guard let itemsCount = presenter?.contributorsCount() else {return 0}
         return Int(itemsCount)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

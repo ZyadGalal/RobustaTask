@@ -40,7 +40,7 @@
 }
 
 
-- (NSUInteger)repositoriesCount {
+- (NSUInteger)contributorsCount {
     return self.contributors.count;
 }
 

@@ -29,6 +29,10 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeView {
+    func didFetchNewPage() {
+        self.homeTableView.reloadData()
+    }
+    
     func showIndicator() {
         SVProgressHUD.show(withStatus: "Loading")
     }
@@ -65,11 +69,8 @@ extension HomeViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let itemsCount = presenter?.repositoriesCount() else {return}
-        guard let currentItem = presenter?.getItemAt(Int32(indexPath.row)) else {return}
-        guard let lastItem = presenter?.getItemAt(Int32 (itemsCount - 1)) else {return}
-        guard let isFetchNewPage = presenter?.isFetchingNewPage else {return}
-        if indexPath.row == itemsCount-1 && currentItem == lastItem && !isFetchNewPage {
+        guard let itemsCount = presenter?.repositoriesCount()  else {return}
+        if indexPath.row == itemsCount-1 {
             print("called")
             presenter?.fetchNewPage()
         }

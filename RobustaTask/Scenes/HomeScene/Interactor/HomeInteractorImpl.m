@@ -22,10 +22,17 @@
     NSLog(@"deall form repo Home Interactor");
 }
 
-
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.context = [self managedObjectContext];
+    }
+    return self;
+}
 - (void)fetchRepoWithCompletion:(completionHandler)completion {
     __weak typeof(self) weakSelf = self;
-
+    
     NSURL *url = [[NSURL alloc] initWithString:@"https://api.github.com/repositories"];
     [NetworkClient performRequestWithURL:url CompletionHandler:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (weakSelf == nil) {
@@ -34,39 +41,47 @@
         }
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (error){
-            completion(nil , error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+                completion(nil , error);
+            });
         }
         else{
-            NSError *error = nil;
-            NSArray *responseJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-            if (error) {
-                completion(nil,error);
-                return;
-            }
-            strongSelf.context = [strongSelf managedObjectContext];
-            //remove all records from core data entity
-            [strongSelf deleteReposFromCoreData];
-            //Loop on response to save in core data
-            for (NSDictionary * repoDict in responseJSON) {
-                NSDictionary *ownerDict = repoDict[@"owner"];
-                NSString *description = repoDict[@"description"];
-                RepoModel *repository = RepoModel.new;
-                repository.repoName = repoDict[@"name"];;
-                repository.ownerName = ownerDict[@"login"];
-                repository.ownerAvatarURL = ownerDict[@"avatar_url"];
-                repository.contributorsURL = repoDict[@"contributors_url"];
-                repository.githubLink = repoDict[@"html_url"];
-                repository.languagesLink = repoDict[@"languages_url"];
-                if ([description isKindOfClass:[NSString class]]){
-                    repository.repoDescription = description;
+                
+                NSError *error = nil;
+                NSArray *responseJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+                if (error) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completion(nil,error);
+                    });
+                    return;
                 }
-
-                [strongSelf saveDataToLocalDatabaseWithModel:repository];
-            }
-            //get first page to return
-            NSMutableArray<RepoModel *> *repos = NSMutableArray.new;
-            [repos addObjectsFromArray: [strongSelf fetchDataWithOffset:0]];
-            completion(repos , nil);
+                //remove all records from core data entity
+                [strongSelf deleteReposFromCoreData];
+                //Loop on response to save in core data
+                for (NSDictionary * repoDict in responseJSON) {
+                    NSDictionary *ownerDict = repoDict[@"owner"];
+                    NSString *description = repoDict[@"description"];
+                    RepoModel *repository = RepoModel.new;
+                    repository.repoName = repoDict[@"name"];;
+                    repository.ownerName = ownerDict[@"login"];
+                    repository.ownerAvatarURL = ownerDict[@"avatar_url"];
+                    repository.contributorsURL = repoDict[@"contributors_url"];
+                    repository.githubLink = repoDict[@"html_url"];
+                    repository.languagesLink = repoDict[@"languages_url"];
+                    if ([description isKindOfClass:[NSString class]]){
+                        repository.repoDescription = description;
+                    }
+                    
+                    [strongSelf saveDataToLocalDatabaseWithModel:repository];
+                }
+                //get first page to return
+                NSMutableArray<RepoModel *> *repos = NSMutableArray.new;
+                [repos addObjectsFromArray: [strongSelf fetchDataWithOffset:0]];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(repos , nil);
+                });
+       
         }
     }];
     
@@ -74,8 +89,8 @@
 
 -(void) saveDataToLocalDatabaseWithModel: (RepoModel *) model {
     NSManagedObject *transaction = [NSEntityDescription insertNewObjectForEntityForName:@"Repo" inManagedObjectContext: self.context];
-
-
+    
+    
     [transaction setValue:model.ownerName forKey:@"ownerName"];
     [transaction setValue:model.ownerAvatarURL forKey:@"ownerAvatarURL"];
     [transaction setValue:model.repoName forKey:@"repoName"];
@@ -83,7 +98,7 @@
     [transaction setValue:model.languagesLink forKey:@"languagesLink"];
     [transaction setValue:model.githubLink forKey:@"githubLink"];
     [transaction setValue:model.contributorsURL forKey:@"contributorsURL"];
-
+    
     // Save the context
     NSError *error = nil;
     if (![self.context save:&error]) {
@@ -91,7 +106,6 @@
     }
 }
 -(NSArray *) fetchDataWithOffset: (NSUInteger) offset {
-    //self.context = [self managedObjectContext];
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"Repo" inManagedObjectContext:self.context]];
     NSError* error = nil;
@@ -99,7 +113,7 @@
     request.fetchLimit = 10;
     NSArray* response = [self.context executeFetchRequest:request error:&error];
     return response;
-
+    
 }
 -(void) deleteReposFromCoreData{
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Repo"];
@@ -123,7 +137,7 @@
 - (NSUInteger )numberOfReposInEntity {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Repo"];
     NSError *deleteError = nil;
-
+    
     NSUInteger objectsCount = [self.context countForFetchRequest:request error:&deleteError];
     if (deleteError) {
         NSLog(@"error while deleting %@", deleteError);

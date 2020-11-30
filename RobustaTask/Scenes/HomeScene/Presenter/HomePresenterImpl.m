@@ -20,7 +20,6 @@
 @synthesize view;
 @synthesize router;
 @synthesize interactor;
-@synthesize isFetchingNewPage = _isFetchingNewPage;
 
 
 - (void)dealloc
@@ -34,7 +33,6 @@
     self.interactor = interactor;
 }
 - (void)viewDidLoad{
-    self.isFetchingNewPage = FALSE;
     [self fetchRepositories];
 }
 - (void) fetchRepositories {
@@ -59,11 +57,14 @@
 }
 //MARK: -fetch new page from coredata
 - (void)fetchNewPage {
-    self.isFetchingNewPage = TRUE;
     if ([self.repositories count] < self.numberOfRepos){
-        [self.repositories addObjectsFromArray:[interactor fetchDataWithOffset:self.repositories.count]];
-        [self.view didFetchDataSuccessfully];
-        self.isFetchingNewPage = FALSE;
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul);
+        dispatch_async(queue, ^{
+            [self.repositories addObjectsFromArray:[self->interactor fetchDataWithOffset:self.repositories.count]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.view didFetchNewPage];
+            });
+        });
     }
 }
 - (NSUInteger) repositoriesCount{

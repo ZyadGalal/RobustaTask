@@ -18,7 +18,7 @@
 
 -(void) initWithView: (id < ContributorsView >) view interactor: (id < ContributorsInteractor >) interactor router: (id < ContributorsRouter >) router contributorsURL:(NSURL *) url;
 -(void) viewDidLoad;
--(NSUInteger) repositoriesCount;
+-(NSUInteger) contributorsCount;
 -(ContributorsModel *) getItemAtIndex: (int) index;
 
 @end

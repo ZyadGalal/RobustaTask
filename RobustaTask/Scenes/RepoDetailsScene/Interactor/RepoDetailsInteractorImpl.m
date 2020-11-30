@@ -19,16 +19,22 @@
 - (void)getUsedLanguagesFromURL:(NSURL *)url Completion:(comp)completionHandler {
     [NetworkClient performRequestWithURL:url CompletionHandler:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error){
-            completionHandler(nil , error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(nil , error);
+            });
         }
         else{
             NSError *error = nil;
             NSDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
             if (error) {
-                completionHandler(nil,error);
-                return;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completionHandler(nil,error);
+                    return;
+                });
             }
-            completionHandler(responseJSON , nil);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionHandler(responseJSON , nil);
+            });
         }
     }];
 }

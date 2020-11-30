@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol HomeView <NSObject>
+-(void) didFetchNewPage;
 -(void) didFetchDataSuccessfully;
 -(void) didFailFetchingDataWithError: (NSString *) error;
 -(void) showIndicator;

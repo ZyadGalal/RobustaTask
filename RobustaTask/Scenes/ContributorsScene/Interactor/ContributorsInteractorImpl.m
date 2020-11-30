@@ -22,14 +22,19 @@
 - (void)fetchContributorsWithURL:(NSURL *)url Completion:(completionHandler)completion {
     [NetworkClient performRequestWithURL:url CompletionHandler:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error){
-            completion(nil , error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+                completion(nil , error);
+            });
         }
         else{
             NSError *error = nil;
             NSArray *responseJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
             if (error) {
-                completion(nil,error);
-                return;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(nil,error);
+                    return;
+                });
             }
 
             NSMutableArray<ContributorsModel *> *contributors = NSMutableArray.new;
@@ -37,10 +42,12 @@
                 ContributorsModel *contributor = ContributorsModel.new;
                 contributor.contributorName = contributorDictionary[@"login"];
                 contributor.contributorAvatarURL = [[NSURL alloc] initWithString:contributorDictionary[@"avatar_url"]];
-                
                 [contributors addObject:contributor];
             }
-            completion(contributors , nil);
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+                completion(contributors , nil);
+            });
         }
     }];
 
