@@ -18,11 +18,11 @@
     NSLog(@"deall form repo contrib Interactor");
 }
 
-
 - (void)fetchContributorsWithURL:(NSURL *)url Completion:(completionHandler)completion {
     [NetworkClient performRequestWithURL:url CompletionHandler:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error){
             dispatch_async(dispatch_get_main_queue(), ^{
+
                 completion(nil , error);
             });
         }

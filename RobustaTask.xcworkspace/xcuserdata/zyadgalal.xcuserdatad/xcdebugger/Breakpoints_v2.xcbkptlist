@@ -119,22 +119,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "51D467FC-813C-4AA0-A7C2-4C7E59F84AAA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RobustaTask/Scenes/HomeScene/Presenter/HomePresenterImpl.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "-fetchNewPage"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4A68C784-A56F-4DF1-B0F5-887B61DA7D53"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -146,70 +130,6 @@
             endingLineNumber = "23"
             landmarkName = "didFetchDataSuccessfully()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E8F6DF66-9F10-4EDE-BCE8-A5384363EC4F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RobustaTask/Scenes/ContributorsScene/ViewController/ContributorsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "didFetchDataSuccessfully()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "49F8F750-E1D3-4D23-AF8A-D41D0078CE6B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RobustaTaskTests/HomeTests/MockHomeViewController/MockHomeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "didFetchDataSuccessfully()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "49F8F750-E1D3-4D23-AF8A-D41D0078CE6B - 4160cc32c0edf37f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RobustaTaskTests.MockHomeViewController.didFetchDataSuccessfully() -&gt; ()"
-                  moduleName = "RobustaTaskTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zyadgalal/Desktop/My%20Projects/RobustaTask/RobustaTaskTests/HomeTests/MockHomeViewController/MockHomeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "6">
-               </Location>
-               <Location
-                  uuid = "49F8F750-E1D3-4D23-AF8A-D41D0078CE6B - 690f3154606ac77b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "@objc RobustaTaskTests.MockHomeViewController.didFetchDataSuccessfully() -&gt; ()"
-                  moduleName = "RobustaTaskTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zyadgalal/Desktop/My%20Projects/RobustaTask/RobustaTaskTests/HomeTests/MockHomeViewController/MockHomeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "27">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -44,7 +44,6 @@
     [self.router navigateToContributorsFromView:view contributorsURL:[[NSURL alloc]initWithString:model.contributorsURL]];
 }
 
-
 -(void) getLanguages {
     __weak typeof(self) weakSelf = self;
 

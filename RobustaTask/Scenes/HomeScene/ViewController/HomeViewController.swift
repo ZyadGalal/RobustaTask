@@ -32,15 +32,12 @@ extension HomeViewController: HomeView {
     func showIndicator() {
         SVProgressHUD.show(withStatus: "Loading")
     }
-    
     func hideIndicator() {
         SVProgressHUD.dismiss()
     }
-    
     func didFetchDataSuccessfully() {
         self.homeTableView.reloadData()
     }
-    
     func didFailFetchingDataWithError(_ error: String!) {
         self.showAlert(title: "Error", message: error) { _ in}
     }

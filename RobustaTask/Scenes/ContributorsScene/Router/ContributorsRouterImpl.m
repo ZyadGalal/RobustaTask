@@ -21,6 +21,7 @@
 
 + (UIViewController *)createDetailsViewWithContributorsURL:(NSURL *)url {
     ContributorsViewController *contributorsView = [[ContributorsViewController alloc] initWithNibName:@"ContributorsViewController" bundle:nil];
+    
     ContributorsInteractorImpl *interactor = [[ContributorsInteractorImpl alloc] init];
     ContributorsRouterImpl *router = [[ContributorsRouterImpl alloc] init];
     ContributorsPresenterImpl *presenter = [[ContributorsPresenterImpl alloc] init];

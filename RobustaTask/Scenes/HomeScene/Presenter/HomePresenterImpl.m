@@ -20,7 +20,6 @@
 @synthesize view;
 @synthesize router;
 @synthesize interactor;
-@synthesize repositories;
 
 - (void)dealloc
 {

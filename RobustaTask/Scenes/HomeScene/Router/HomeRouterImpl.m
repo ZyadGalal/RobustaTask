@@ -14,7 +14,6 @@
 
 @implementation HomeRouterImpl
 
-
 - (void)dealloc
 {
     NSLog(@"deall form repo Home Router");
@@ -29,7 +28,6 @@
     [presenter initWithView:homeView interactor:interactor router:router];
     homeView.presenter = presenter;
     return homeView;
-    
 }
 
 - (void)navigateToRepoDetailsFromView:(id<HomeView>)view repoModel:(RepoModel *)model {

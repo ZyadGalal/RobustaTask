@@ -73,7 +73,6 @@ class RepoDetailsViewController: UIViewController {
         chartData.setValueTextColor(.black)
         pieChartView.data = chartData
     }
-    
 }
 
 extension RepoDetailsViewController: RepoDetailsView {
@@ -94,7 +93,7 @@ extension RepoDetailsViewController: RepoDetailsView {
             UIView.animate(withDuration: 0.3) {
                 self.containerView.alpha = 1
             }
-    }
+        }
 
     func showIndicator() {
         SVProgressHUD.show(withStatus: "Loading")

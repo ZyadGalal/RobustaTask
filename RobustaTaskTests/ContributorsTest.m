@@ -24,6 +24,7 @@ MockContributorsViewController *contributorsView;
 id< ContributorsInteractor > contributorsInteractor;
 id< ContributorsPresenter > contributorsPresenter;
 id<ContributorsRouter> contributorsRouter;
+
 - (void)setUp {
     contributorsView = [[MockContributorsViewController alloc] initWithNibName:@"ContributorsViewController" bundle:nil];
     contributorsInteractor = [[MockContributorsInteractor alloc] init];
