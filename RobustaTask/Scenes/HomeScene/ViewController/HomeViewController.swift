@@ -29,10 +29,6 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeView {
-    func didFetchNewPage() {
-        self.homeTableView.reloadData()
-    }
-    
     func showIndicator() {
         SVProgressHUD.show(withStatus: "Loading")
     }
@@ -48,8 +44,6 @@ extension HomeViewController: HomeView {
     func didFailFetchingDataWithError(_ error: String!) {
         self.showAlert(title: "Error", message: error) { _ in}
     }
-    
-    
 }
 
 extension HomeViewController: UITableViewDataSource{
@@ -71,7 +65,6 @@ extension HomeViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let itemsCount = presenter?.repositoriesCount()  else {return}
         if indexPath.row == itemsCount-1 {
-            print("called")
             presenter?.fetchNewPage()
         }
     }

@@ -16,7 +16,7 @@
 
 @implementation HomeInteractorImpl
 
-
+int currentPage = 0;
 - (void)dealloc
 {
     NSLog(@"deall form repo Home Interactor");
@@ -30,7 +30,7 @@
     }
     return self;
 }
-- (void)fetchRepoWithCompletion:(completionHandler)completion {
+- (void)fetchRepositoriesWithCompletion:(completionHandler)completion {
     __weak typeof(self) weakSelf = self;
     
     NSURL *url = [[NSURL alloc] initWithString:@"https://api.github.com/repositories"];
@@ -42,12 +42,10 @@
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (error){
             dispatch_async(dispatch_get_main_queue(), ^{
-
                 completion(nil , error);
             });
         }
         else{
-                
                 NSError *error = nil;
                 NSArray *responseJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
                 if (error) {
@@ -59,16 +57,16 @@
                 //remove all records from core data entity
                 [strongSelf deleteReposFromCoreData];
                 //Loop on response to save in core data
-                for (NSDictionary * repoDict in responseJSON) {
-                    NSDictionary *ownerDict = repoDict[@"owner"];
-                    NSString *description = repoDict[@"description"];
+                for (NSDictionary * responseDictionary in responseJSON) {
+                    NSDictionary *ownerDict = responseDictionary[@"owner"];
+                    NSString *description = responseDictionary[@"description"];
                     RepoModel *repository = RepoModel.new;
-                    repository.repoName = repoDict[@"name"];;
+                    repository.repoName = responseDictionary[@"name"];;
                     repository.ownerName = ownerDict[@"login"];
                     repository.ownerAvatarURL = ownerDict[@"avatar_url"];
-                    repository.contributorsURL = repoDict[@"contributors_url"];
-                    repository.githubLink = repoDict[@"html_url"];
-                    repository.languagesLink = repoDict[@"languages_url"];
+                    repository.contributorsURL = responseDictionary[@"contributors_url"];
+                    repository.githubLink = responseDictionary[@"html_url"];
+                    repository.languagesLink = responseDictionary[@"languages_url"];
                     if ([description isKindOfClass:[NSString class]]){
                         repository.repoDescription = description;
                     }
@@ -77,11 +75,10 @@
                 }
                 //get first page to return
                 NSMutableArray<RepoModel *> *repos = NSMutableArray.new;
-                [repos addObjectsFromArray: [strongSelf fetchDataWithOffset:0]];
+                [repos addObjectsFromArray: [strongSelf fetchNewPageRepositories]];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     completion(repos , nil);
                 });
-       
         }
     }];
     
@@ -89,8 +86,6 @@
 
 -(void) saveDataToLocalDatabaseWithModel: (RepoModel *) model {
     NSManagedObject *transaction = [NSEntityDescription insertNewObjectForEntityForName:@"Repo" inManagedObjectContext: self.context];
-    
-    
     [transaction setValue:model.ownerName forKey:@"ownerName"];
     [transaction setValue:model.ownerAvatarURL forKey:@"ownerAvatarURL"];
     [transaction setValue:model.repoName forKey:@"repoName"];
@@ -105,13 +100,17 @@
         NSLog(@"Save Failed! %@ %@", error, [error localizedDescription]);
     }
 }
--(NSArray *) fetchDataWithOffset: (NSUInteger) offset {
+-(NSArray *) fetchNewPageRepositories{
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"Repo" inManagedObjectContext:self.context]];
     NSError* error = nil;
-    request.fetchOffset = offset;
+    request.fetchOffset = currentPage * 10;
     request.fetchLimit = 10;
     NSArray* response = [self.context executeFetchRequest:request error:&error];
+    if (error) {
+        return @[];
+    }
+    currentPage += 1;
     return response;
     
 }

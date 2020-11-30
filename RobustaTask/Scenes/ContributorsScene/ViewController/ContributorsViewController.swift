@@ -44,7 +44,6 @@ extension ContributorsViewController: UITableViewDataSource {
 extension ContributorsViewController: ContributorsView {
     func didFetchDataSuccessfully() {
         self.contributorsTableView.reloadData()
-        
     }
     
     func didFailFetchingDataWithError(_ error: String!) {

@@ -10,7 +10,7 @@
 @protocol HomeInteractor <NSObject>
 typedef void (^completionHandler)(NSMutableArray* _Nullable response , NSError* _Nullable error);
 
--(void) fetchRepoWithCompletion:(completionHandler _Nonnull) completion;
--(NSArray * _Nonnull) fetchDataWithOffset: (NSUInteger) offset;
+-(void) fetchRepositoriesWithCompletion:(completionHandler _Nonnull) completion;
+-(NSArray * _Nonnull) fetchNewPageRepositories;
 -(NSUInteger ) numberOfReposInEntity;
 @end

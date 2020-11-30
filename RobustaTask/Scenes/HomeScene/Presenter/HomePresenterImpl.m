@@ -20,7 +20,7 @@
 @synthesize view;
 @synthesize router;
 @synthesize interactor;
-
+@synthesize repositories;
 
 - (void)dealloc
 {
@@ -38,7 +38,7 @@
 - (void) fetchRepositories {
     __weak typeof(self) weakSelf = self;
     [self.view showIndicator];
-    [interactor fetchRepoWithCompletion:^(NSMutableArray * _Nullable response, NSError * _Nullable error) {
+    [interactor fetchRepositoriesWithCompletion:^(NSMutableArray * _Nullable response, NSError * _Nullable error) {
         if (weakSelf == nil) {
             NSLog(@"self is nil");
             return ;
@@ -60,9 +60,9 @@
     if ([self.repositories count] < self.numberOfRepos){
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul);
         dispatch_async(queue, ^{
-            [self.repositories addObjectsFromArray:[self->interactor fetchDataWithOffset:self.repositories.count]];
+            [self.repositories addObjectsFromArray:[self->interactor fetchNewPageRepositories]];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.view didFetchNewPage];
+                [self.view didFetchDataSuccessfully];
             });
         });
     }
@@ -78,7 +78,5 @@
 - (void)didSelectRepoAtIndex:(int)index {
     [router navigateToRepoDetailsFromView:view repoModel:self.repositories[index]];
 }
-
-
 
 @end

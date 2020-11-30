@@ -10,8 +10,9 @@
 		323E09E72571B0D60039A07C /* ContributorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323E09E52571B0D60039A07C /* ContributorsTableViewCell.swift */; };
 		323E09E82571B0D60039A07C /* ContributorsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 323E09E62571B0D60039A07C /* ContributorsTableViewCell.xib */; };
 		324939022574269400DFEE41 /* RepoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 327E304C25705F6A00CA41D2 /* RepoModel.m */; };
-		32493919257427FB00DFEE41 /* RobustaTaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32493918257427FB00DFEE41 /* RobustaTaskTests.m */; };
+		32493919257427FB00DFEE41 /* HomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 32493918257427FB00DFEE41 /* HomeTests.m */; };
 		3249394425742D8200DFEE41 /* MockHomeInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3249394325742D8200DFEE41 /* MockHomeInteractor.m */; };
+		3274F4C52575066800FDBD94 /* MockHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3274F4C42575066800FDBD94 /* MockHomeViewController.swift */; };
 		3276F39725718092005D2C07 /* ChartColorTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276F39625718092005D2C07 /* ChartColorTemplates.swift */; };
 		327E2FD42570174E00CA41D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 327E2FD32570174E00CA41D2 /* AppDelegate.m */; };
 		327E2FDF2570174F00CA41D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327E2FDE2570174F00CA41D2 /* Assets.xcassets */; };
@@ -33,6 +34,9 @@
 		327E306D2571582A00CA41D2 /* RepoDetailsPresenterImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 327E306C2571582A00CA41D2 /* RepoDetailsPresenterImpl.m */; };
 		327E3076257159C800CA41D2 /* RepoDetailsRouterImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 327E3075257159C800CA41D2 /* RepoDetailsRouterImpl.m */; };
 		327E307C25715A9C00CA41D2 /* RepoDetailsInteractorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 327E307B25715A9C00CA41D2 /* RepoDetailsInteractorImpl.m */; };
+		328CF5CA25751AC3006137CD /* MockContributorsInteractorImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 328CF5C925751AC3006137CD /* MockContributorsInteractorImpl.m */; };
+		329F0A0125751E6100A6403E /* ContributorsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 329F0A0025751E6100A6403E /* ContributorsTest.m */; };
+		329F0A0A25751E8600A6403E /* MockContributorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F0A0925751E8600A6403E /* MockContributorsViewController.swift */; };
 		32BA43672571A134006FAF07 /* ContributorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BA43652571A134006FAF07 /* ContributorsViewController.swift */; };
 		32BA43682571A134006FAF07 /* ContributorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32BA43662571A134006FAF07 /* ContributorsViewController.xib */; };
 		32BA436E2571A186006FAF07 /* ContributorsPresenterImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BA436D2571A186006FAF07 /* ContributorsPresenterImpl.m */; };
@@ -62,10 +66,12 @@
 		323E09E62571B0D60039A07C /* ContributorsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContributorsTableViewCell.xib; sourceTree = "<group>"; };
 		324938EE2574239400DFEE41 /* HomeInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeInteractor.h; sourceTree = "<group>"; };
 		32493916257427FB00DFEE41 /* RobustaTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RobustaTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		32493918257427FB00DFEE41 /* RobustaTaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobustaTaskTests.m; sourceTree = "<group>"; };
+		32493918257427FB00DFEE41 /* HomeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTests.m; sourceTree = "<group>"; };
 		3249391A257427FB00DFEE41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3249394025742CEE00DFEE41 /* MockHomeInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MockHomeInteractor.h; path = RobustaTask/Scenes/HomeScene/Interactor/MockHomeInteractor.h; sourceTree = SOURCE_ROOT; };
 		3249394325742D8200DFEE41 /* MockHomeInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MockHomeInteractor.m; path = RobustaTask/Scenes/HomeScene/Interactor/MockHomeInteractor.m; sourceTree = SOURCE_ROOT; };
+		3274F4C42575066800FDBD94 /* MockHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeViewController.swift; sourceTree = "<group>"; };
+		3274F4CF2575086D00FDBD94 /* RobustaTaskTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RobustaTaskTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		3276F39625718092005D2C07 /* ChartColorTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColorTemplates.swift; sourceTree = "<group>"; };
 		327E2FCF2570174E00CA41D2 /* RobustaTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobustaTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		327E2FD22570174E00CA41D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -107,6 +113,10 @@
 		327E307825715A3400CA41D2 /* RepoDetailsInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepoDetailsInteractor.h; sourceTree = "<group>"; };
 		327E307925715A5500CA41D2 /* RepoDetailsInteractorImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepoDetailsInteractorImpl.h; sourceTree = "<group>"; };
 		327E307B25715A9C00CA41D2 /* RepoDetailsInteractorImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepoDetailsInteractorImpl.m; sourceTree = "<group>"; };
+		328CF5C925751AC3006137CD /* MockContributorsInteractorImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockContributorsInteractorImpl.m; sourceTree = "<group>"; };
+		328CF5CD25751B30006137CD /* MockContributorsInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockContributorsInteractor.h; sourceTree = "<group>"; };
+		329F0A0025751E6100A6403E /* ContributorsTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContributorsTest.m; sourceTree = "<group>"; };
+		329F0A0925751E8600A6403E /* MockContributorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockContributorsViewController.swift; sourceTree = "<group>"; };
 		32BA43652571A134006FAF07 /* ContributorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributorsViewController.swift; sourceTree = "<group>"; };
 		32BA43662571A134006FAF07 /* ContributorsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContributorsViewController.xib; sourceTree = "<group>"; };
 		32BA436B2571A15A006FAF07 /* ContributorsPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContributorsPresenter.h; sourceTree = "<group>"; };
@@ -150,8 +160,11 @@
 		32493917257427FB00DFEE41 /* RobustaTaskTests */ = {
 			isa = PBXGroup;
 			children = (
-				3249393F25742CC100DFEE41 /* MockHomeInteractor */,
-				32493918257427FB00DFEE41 /* RobustaTaskTests.m */,
+				328CF5C725751A8B006137CD /* ContributorsTest */,
+				328CF5C625751A79006137CD /* HomeTests */,
+				32493918257427FB00DFEE41 /* HomeTests.m */,
+				329F0A0025751E6100A6403E /* ContributorsTest.m */,
+				3274F4CF2575086D00FDBD94 /* RobustaTaskTests-Bridging-Header.h */,
 				3249391A257427FB00DFEE41 /* Info.plist */,
 			);
 			path = RobustaTaskTests;
@@ -164,6 +177,14 @@
 				3249394325742D8200DFEE41 /* MockHomeInteractor.m */,
 			);
 			path = MockHomeInteractor;
+			sourceTree = "<group>";
+		};
+		3274F4C32575065700FDBD94 /* MockHomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3274F4C42575066800FDBD94 /* MockHomeViewController.swift */,
+			);
+			path = MockHomeViewController;
 			sourceTree = "<group>";
 		};
 		3276F3952571807B005D2C07 /* Utils */ = {
@@ -255,9 +276,9 @@
 		327E2FFB2570186600CA41D2 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				324938EE2574239400DFEE41 /* HomeInteractor.h */,
 				327E301B2570240D00CA41D2 /* HomeInteractorImpl.h */,
 				327E301C2570243B00CA41D2 /* HomeInteractorImpl.m */,
-				324938EE2574239400DFEE41 /* HomeInteractor.h */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -357,6 +378,41 @@
 				327E307B25715A9C00CA41D2 /* RepoDetailsInteractorImpl.m */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		328CF5C625751A79006137CD /* HomeTests */ = {
+			isa = PBXGroup;
+			children = (
+				3249393F25742CC100DFEE41 /* MockHomeInteractor */,
+				3274F4C32575065700FDBD94 /* MockHomeViewController */,
+			);
+			path = HomeTests;
+			sourceTree = "<group>";
+		};
+		328CF5C725751A8B006137CD /* ContributorsTest */ = {
+			isa = PBXGroup;
+			children = (
+				329F0A0825751E6E00A6403E /* MockContributorsViewController */,
+				328CF5C825751AA5006137CD /* MockContributorsInteractor */,
+			);
+			path = ContributorsTest;
+			sourceTree = "<group>";
+		};
+		328CF5C825751AA5006137CD /* MockContributorsInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				328CF5C925751AC3006137CD /* MockContributorsInteractorImpl.m */,
+				328CF5CD25751B30006137CD /* MockContributorsInteractor.h */,
+			);
+			path = MockContributorsInteractor;
+			sourceTree = "<group>";
+		};
+		329F0A0825751E6E00A6403E /* MockContributorsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				329F0A0925751E8600A6403E /* MockContributorsViewController.swift */,
+			);
+			path = MockContributorsViewController;
 			sourceTree = "<group>";
 		};
 		32BA43622571A07E006FAF07 /* Scenes */ = {
@@ -650,7 +706,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32493919257427FB00DFEE41 /* RobustaTaskTests.m in Sources */,
+				329F0A0125751E6100A6403E /* ContributorsTest.m in Sources */,
+				328CF5CA25751AC3006137CD /* MockContributorsInteractorImpl.m in Sources */,
+				329F0A0A25751E8600A6403E /* MockContributorsViewController.swift in Sources */,
+				3274F4C52575066800FDBD94 /* MockHomeViewController.swift in Sources */,
+				32493919257427FB00DFEE41 /* HomeTests.m in Sources */,
 				3249394425742D8200DFEE41 /* MockHomeInteractor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -725,7 +785,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ZyadGalal.RobustaTaskTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "RobustaTask/RobustaTask-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "RobustaTaskTests/RobustaTaskTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RobustaTask.app/RobustaTask";
@@ -749,7 +809,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ZyadGalal.RobustaTaskTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "RobustaTask/RobustaTask-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "RobustaTaskTests/RobustaTaskTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RobustaTask.app/RobustaTask";

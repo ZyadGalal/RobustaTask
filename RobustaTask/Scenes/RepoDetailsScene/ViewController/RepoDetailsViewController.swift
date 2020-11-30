@@ -73,11 +73,11 @@ class RepoDetailsViewController: UIViewController {
         chartData.setValueTextColor(.black)
         pieChartView.data = chartData
     }
+    
 }
 
 extension RepoDetailsViewController: RepoDetailsView {
     func updateUI(withOwnerName name: String!, repoName: String!, avatarURL url: URL!, repoDescription description: String!, languages: [AnyHashable : Any]!, totalLines: Int32) {
-        DispatchQueue.main.async {
             self.ownerImageView.kf.indicatorType = .activity
             self.ownerImageView.kf.setImage(with: url)
             self.ownerNameLabel.text = name
@@ -94,10 +94,7 @@ extension RepoDetailsViewController: RepoDetailsView {
             UIView.animate(withDuration: 0.3) {
                 self.containerView.alpha = 1
             }
-        }
-
     }
-    
 
     func showIndicator() {
         SVProgressHUD.show(withStatus: "Loading")

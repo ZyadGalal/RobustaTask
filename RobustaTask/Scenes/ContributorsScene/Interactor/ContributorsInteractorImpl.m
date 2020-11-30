@@ -23,7 +23,6 @@
     [NetworkClient performRequestWithURL:url CompletionHandler:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error){
             dispatch_async(dispatch_get_main_queue(), ^{
-
                 completion(nil , error);
             });
         }
@@ -45,7 +44,6 @@
                 [contributors addObject:contributor];
             }
             dispatch_async(dispatch_get_main_queue(), ^{
-
                 completion(contributors , nil);
             });
         }
